@@ -1,0 +1,42 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.annconia</groupId>
+	<artifactId>annconia-util</artifactId>
+	<packaging>jar</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<description>Annconia Utility Classes</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.annconia</groupId>
+			<artifactId>annconia-core-dependency</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build.aws</groupId>
+				<artifactId>org.springframework.build.aws.maven</artifactId>
+				<version>3.0.0.RELEASE</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>annconia-milestone</id>
+			<name>Annconia Milestone Repository</name>
+			<url>s3://annconia-repo/milestone</url>
+		</repository>
+		<snapshotRepository>
+			<id>annconia-snapshot</id>
+			<name>Annconia Snapshot Repository</name>
+			<url>s3://annconia-repo/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

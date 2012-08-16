@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<autnresponse xmlns:autn='http://schemas.autonomy.com/aci/'>
+	<action>QUERY</action>
+	<response>SUCCESS</response>
+	<test>HELLO</test>
+	<test>WORLD</test>
+	<responsedata>
+		<autn:numhits>1</autn:numhits>
+		<autn:totalhits>1</autn:totalhits>
+		<autn:totaldbdocs>2750</autn:totaldbdocs>
+		<autn:totaldbsecs>2750</autn:totaldbsecs>
+		<autn:hit>
+			<autn:reference>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy
+			</autn:reference>
+			<autn:id>23744</autn:id>
+			<autn:section>0</autn:section>
+			<autn:weight>96.00</autn:weight>
+			<autn:database>PREVIEW</autn:database>
+			<autn:summary>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+				&lt;language_code&gt;en-us&lt;/language_code&gt;
+				&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+				00:36:11&lt;/created_on&gt;
+				&lt;created_by&gt;golka&lt;/created_by&gt;
+				&lt;modified_on&gt;2011-12-06 </autn:summary>
+			<autn:content>
+				<DOCUMENT>
+					<DREREFERENCE>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</DREREFERENCE>
+					<LINK_URL>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</LINK_URL>
+					<DRECONTENT>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+						&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+						&lt;language_code&gt;en-us&lt;/language_code&gt;
+						&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+						00:36:11&lt;/created_on&gt;
+						&lt;created_by&gt;golka&lt;/created_by&gt;
+						&lt;modified_on&gt;2011-12-06 00:38:13&lt;/modified_on&gt;
+						&lt;modified_by&gt;golka&lt;/modified_by&gt; &lt;image&gt;
+						&lt;imagePath/&gt; &lt;imageAltText/&gt; &lt;/image&gt;
+						&lt;article&gt; &lt;title&gt;Make Today Matter&lt;/title&gt;
+						&lt;copy&gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, nam ad
+						labitur utroque, ne qui ubique dolorum. Tollit feugiat efficiantur
+						at nam, quis cetero pri ad, qui ad autem iracundia. Pro autem
+						illum eirmod ne, propriae torquatos cotidieque sit et, an per
+						oporteat erroribus cotidieque. Pro ea nulla bonorum
+						docendi.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Pri autem fabulas
+						vivendum ut, est quot deserunt te. Ei sea errem doctus audire. No
+						everti denique postulant mei, erant utroque cotidieque est te.
+						Aperiri tibique prodesset pro te. Libris timeam aperiam ex eum,
+						vel ea putent apeirian.&amp;lt;/p&amp;gt;&lt;/copy&gt;
+						&lt;/article&gt; &lt;/root&gt; </DRECONTENT>
+					<DATABASE>PREVIEW</DATABASE>
+					<CONTEXTS>
+						<CONTEXT>
+							<CREATIONDATE>2011-12-05 18:38:13</CREATIONDATE>
+							<CONTENTTYPE>MTS::hwInnergyLandingPage</CONTENTTYPE>
+							<START_DATE>2011-01-01</START_DATE>
+							<LOCALE>en_US</LOCALE>
+							<END_DATE>9999-12-31</END_DATE>
+							<FILE_TYPE>XML</FILE_TYPE>
+						</CONTEXT>
+					</CONTEXTS>
+				</DOCUMENT>
+			</autn:content>
+		</autn:hit>
+		<autn:hit>
+			<autn:reference>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy
+			</autn:reference>
+			<autn:id>23744</autn:id>
+			<autn:section>0</autn:section>
+			<autn:weight>96.00</autn:weight>
+			<autn:database>PREVIEW</autn:database>
+			<autn:summary>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+				&lt;language_code&gt;en-us&lt;/language_code&gt;
+				&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+				00:36:11&lt;/created_on&gt;
+				&lt;created_by&gt;golka&lt;/created_by&gt;
+				&lt;modified_on&gt;2011-12-06 </autn:summary>
+			<autn:content>
+				<DOCUMENT>
+					<DREREFERENCE>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</DREREFERENCE>
+					<LINK_URL>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</LINK_URL>
+					<DRECONTENT>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+						&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+						&lt;language_code&gt;en-us&lt;/language_code&gt;
+						&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+						00:36:11&lt;/created_on&gt;
+						&lt;created_by&gt;golka&lt;/created_by&gt;
+						&lt;modified_on&gt;2011-12-06 00:38:13&lt;/modified_on&gt;
+						&lt;modified_by&gt;golka&lt;/modified_by&gt; &lt;image&gt;
+						&lt;imagePath/&gt; &lt;imageAltText/&gt; &lt;/image&gt;
+						&lt;article&gt; &lt;title&gt;Make Today Matter&lt;/title&gt;
+						&lt;copy&gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, nam ad
+						labitur utroque, ne qui ubique dolorum. Tollit feugiat efficiantur
+						at nam, quis cetero pri ad, qui ad autem iracundia. Pro autem
+						illum eirmod ne, propriae torquatos cotidieque sit et, an per
+						oporteat erroribus cotidieque. Pro ea nulla bonorum
+						docendi.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Pri autem fabulas
+						vivendum ut, est quot deserunt te. Ei sea errem doctus audire. No
+						everti denique postulant mei, erant utroque cotidieque est te.
+						Aperiri tibique prodesset pro te. Libris timeam aperiam ex eum,
+						vel ea putent apeirian.&amp;lt;/p&amp;gt;&lt;/copy&gt;
+						&lt;/article&gt; &lt;/root&gt; </DRECONTENT>
+					<DATABASE>PREVIEW</DATABASE>
+					<CONTEXTS>
+						<CONTEXT>
+							<CREATIONDATE>2011-12-05 18:38:13</CREATIONDATE>
+							<CONTENTTYPE>MTS::hwInnergyLandingPage</CONTENTTYPE>
+							<START_DATE>2011-01-01</START_DATE>
+							<LOCALE>en_US</LOCALE>
+							<END_DATE>9999-12-31</END_DATE>
+							<FILE_TYPE>XML</FILE_TYPE>
+						</CONTEXT>
+					</CONTEXTS>
+				</DOCUMENT>
+			</autn:content>
+		</autn:hit>
+		<autn:hit>
+			<autn:reference>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy
+			</autn:reference>
+			<autn:id>23744</autn:id>
+			<autn:section>0</autn:section>
+			<autn:weight>96.00</autn:weight>
+			<autn:database>PREVIEW</autn:database>
+			<autn:summary>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+				&lt;language_code&gt;en-us&lt;/language_code&gt;
+				&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+				00:36:11&lt;/created_on&gt;
+				&lt;created_by&gt;golka&lt;/created_by&gt;
+				&lt;modified_on&gt;2011-12-06 </autn:summary>
+			<autn:content>
+				<DOCUMENT>
+					<DREREFERENCE>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</DREREFERENCE>
+					<LINK_URL>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</LINK_URL>
+					<DRECONTENT>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+						&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+						&lt;language_code&gt;en-us&lt;/language_code&gt;
+						&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+						00:36:11&lt;/created_on&gt;
+						&lt;created_by&gt;golka&lt;/created_by&gt;
+						&lt;modified_on&gt;2011-12-06 00:38:13&lt;/modified_on&gt;
+						&lt;modified_by&gt;golka&lt;/modified_by&gt; &lt;image&gt;
+						&lt;imagePath/&gt; &lt;imageAltText/&gt; &lt;/image&gt;
+						&lt;article&gt; &lt;title&gt;Make Today Matter&lt;/title&gt;
+						&lt;copy&gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, nam ad
+						labitur utroque, ne qui ubique dolorum. Tollit feugiat efficiantur
+						at nam, quis cetero pri ad, qui ad autem iracundia. Pro autem
+						illum eirmod ne, propriae torquatos cotidieque sit et, an per
+						oporteat erroribus cotidieque. Pro ea nulla bonorum
+						docendi.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Pri autem fabulas
+						vivendum ut, est quot deserunt te. Ei sea errem doctus audire. No
+						everti denique postulant mei, erant utroque cotidieque est te.
+						Aperiri tibique prodesset pro te. Libris timeam aperiam ex eum,
+						vel ea putent apeirian.&amp;lt;/p&amp;gt;&lt;/copy&gt;
+						&lt;/article&gt; &lt;/root&gt; </DRECONTENT>
+					<DATABASE>PREVIEW</DATABASE>
+					<CONTEXTS>
+						<CONTEXT>
+							<CREATIONDATE>2011-12-05 18:38:13</CREATIONDATE>
+							<CONTENTTYPE>MTS::hwInnergyLandingPage</CONTENTTYPE>
+							<START_DATE>2011-01-01</START_DATE>
+							<LOCALE>en_US</LOCALE>
+							<END_DATE>9999-12-31</END_DATE>
+							<FILE_TYPE>XML</FILE_TYPE>
+						</CONTEXT>
+					</CONTEXTS>
+				</DOCUMENT>
+			</autn:content>
+		</autn:hit>
+		<autn:hit>
+			<autn:reference>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy
+			</autn:reference>
+			<autn:id>23744</autn:id>
+			<autn:section>0</autn:section>
+			<autn:weight>96.00</autn:weight>
+			<autn:database>PREVIEW</autn:database>
+			<autn:summary>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+				&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+				&lt;language_code&gt;en-us&lt;/language_code&gt;
+				&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+				00:36:11&lt;/created_on&gt;
+				&lt;created_by&gt;golka&lt;/created_by&gt;
+				&lt;modified_on&gt;2011-12-06 </autn:summary>
+			<autn:content>
+				<DOCUMENT>
+					<DREREFERENCE>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</DREREFERENCE>
+					<LINK_URL>http://corpcmstsdev01:8080/lscs/v1/document/path/templatedata/innergy/landing_page/data/en-us/2011/Dec/landing_page.dcr/?project=//corpcmstsdev01/default/main/innergy</LINK_URL>
+					<DRECONTENT>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+						&lt;root&gt; &lt;record_name&gt;landing_page&lt;/record_name&gt;
+						&lt;language_code&gt;en-us&lt;/language_code&gt;
+						&lt;master_dcr_vpath/&gt; &lt;created_on&gt;2011-12-06
+						00:36:11&lt;/created_on&gt;
+						&lt;created_by&gt;golka&lt;/created_by&gt;
+						&lt;modified_on&gt;2011-12-06 00:38:13&lt;/modified_on&gt;
+						&lt;modified_by&gt;golka&lt;/modified_by&gt; &lt;image&gt;
+						&lt;imagePath/&gt; &lt;imageAltText/&gt; &lt;/image&gt;
+						&lt;article&gt; &lt;title&gt;Make Today Matter&lt;/title&gt;
+						&lt;copy&gt;&amp;lt;p&amp;gt;Lorem ipsum dolor sit amet, nam ad
+						labitur utroque, ne qui ubique dolorum. Tollit feugiat efficiantur
+						at nam, quis cetero pri ad, qui ad autem iracundia. Pro autem
+						illum eirmod ne, propriae torquatos cotidieque sit et, an per
+						oporteat erroribus cotidieque. Pro ea nulla bonorum
+						docendi.&amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;Pri autem fabulas
+						vivendum ut, est quot deserunt te. Ei sea errem doctus audire. No
+						everti denique postulant mei, erant utroque cotidieque est te.
+						Aperiri tibique prodesset pro te. Libris timeam aperiam ex eum,
+						vel ea putent apeirian.&amp;lt;/p&amp;gt;&lt;/copy&gt;
+						&lt;/article&gt; &lt;/root&gt; </DRECONTENT>
+					<DATABASE>PREVIEW</DATABASE>
+					<CONTEXTS>
+						<CONTEXT>
+							<CREATIONDATE>2011-12-05 18:38:13</CREATIONDATE>
+							<CONTENTTYPE>MTS::hwInnergyLandingPage</CONTENTTYPE>
+							<START_DATE>2011-01-01</START_DATE>
+							<LOCALE>en_US</LOCALE>
+							<END_DATE>9999-12-31</END_DATE>
+							<FILE_TYPE>XML</FILE_TYPE>
+						</CONTEXT>
+					</CONTEXTS>
+				</DOCUMENT>
+			</autn:content>
+		</autn:hit>
+		<autn:warning>Security operations were attempted, but the license does
+			not permit it</autn:warning>
+		<autn:warning>Security operations were attempted, but the license does
+			not permit it</autn:warning>
+	</responsedata>
+</autnresponse>

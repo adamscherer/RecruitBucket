@@ -1,0 +1,38 @@
+<div class="modal hide fade">
+    <div class="modal-header">
+        <h3>Add Question</h3>
+    </div>
+    <form id="validation" method="post" class="form-horizontal" >
+    <div class="modal-body">
+        <div class="alert alert-error hide">
+            <strong>Hmmm...</strong> Double check your username and password and try submitting again.
+        </div>
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="question">Questions:</label>
+
+                <div class="controls">
+                    <input id="question" class="input-fluid" type="text" name="question" value="">
+                    <br>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="category">Category:</label>
+
+                <div class="controls sample-form-chosen">
+                    <select id="category" name="category" data-placeholder="Select your category" style="width:82.5%;" class="chzn-select-deselect" tabindex="7">
+                        <option value="SMART">Smart</option>
+                        <option value="MOTIVATED">Motivated</option>
+                        <option value="GETS_ALONG">Gets Along</option>
+                        <option value="GENERAL">General</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <button class="btn btn-primary" type="submit">Save</button>
+    </div>
+    </form>
+</div>

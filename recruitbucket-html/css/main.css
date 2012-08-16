@@ -1,0 +1,130 @@
+@import url("utopia-white.css");
+@import url("utopia-responsive.css");
+@import url("ui-lightness/jquery-ui.css");
+@import url("gallery/modal.css");
+@import url("gallery/jquery.fileupload-ui.css");
+@import url("validationEngine.jquery.css");
+@import url("chosen.css");
+@import url("ie.css");
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica neue", Helvetica, Arial, sans-serif;
+}
+form {
+    margin: 0;
+}
+.user-info {
+    background-position: 173px 10px;
+    width: 170px;
+}
+.user-dropbox {
+    width: 230px;
+}
+div.dataTables_filter .btn {
+    float: right;
+}
+.utopia-map {
+    height: 700px;
+}
+.no-margin {
+    margin-left: 0 !important;
+}
+.columnTitle {
+    color: #888;
+    font-size: 12px;
+    padding: 11px 18px 11px 18px;
+    background: whiteSmoke;
+}
+.login-box input {
+    font-size: 1.5em;
+    height: 26px;
+    padding: 10px;
+    line-height: 26px;
+}
+
+.spinner {
+    background: white url('/images/spinner.gif') no-repeat center center !important;
+    border-color: #CCC;
+    height: 110px;
+    position: absolute;
+    width: 110px;
+    z-index: 55;
+}
+.recruit-body {
+    position: relative;
+}
+.recruit-body .recruit-section {
+    margin: 0 0 30px;
+}
+.recruit-info h5 {
+    clear: both;
+}
+.recruit-info h5 span {
+    font-size: 15px;
+    margin-left: 135px;
+    display: block;
+}
+.recruit-info h5 label {
+    color: #9E9E9E;
+    font-size: 12px;
+    font-style: italic;
+    width: 130px;
+    display: block;
+    float: left;
+}
+.recruit-body .badge {
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    right: 5px;
+}
+#edit-basic {
+    font-size: 13px;
+    line-height: 36px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.statistics-widget h3 {
+    color: #555;
+    display: block;
+    line-height: 1;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    padding: 10px 0;
+}
+
+ul.list-renderer {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+ul.list-renderer li {
+    background: transparent;
+    color: #555;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    font-size: 12px;
+    padding: 10px;
+    border-top: 1px solid #E8E8E8;
+}
+ul.list-renderer li .name {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 73%;
+}
+ul.list-renderer li .value {
+    display: inline-block;
+    overflow: hidden;
+    text-align: right;
+    width: 25%;
+    font-size: 13px;
+    font-weight: bold;
+}
+.utopia-activity-feeds .info {
+    color: #999;
+    font-size: 12px;
+}

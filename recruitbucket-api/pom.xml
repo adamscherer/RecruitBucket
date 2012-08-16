@@ -1,0 +1,56 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.roundarch</groupId>
+	<artifactId>recruitbucket-api</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<description>RecruitBucket API</description>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<jackson.version>1.9.2</jackson.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
+	</properties>
+ 
+	<dependencies>
+		<dependency>
+			<groupId>com.annconia</groupId>
+			<artifactId>annconia-api-core</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<type>jar</type>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build.aws</groupId>
+				<artifactId>org.springframework.build.aws.maven</artifactId>
+				<version>3.0.0.RELEASE</version>
+			</extension>
+		</extensions>
+	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>annconia-milestone</id>
+			<name>Annconia Milestone Repository</name>
+			<url>s3://annconia-repo/milestone</url>
+		</repository>
+		<snapshotRepository>
+			<id>annconia-snapshot</id>
+			<name>Annconia Snapshot Repository</name>
+			<url>s3://annconia-repo/snapshot</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>

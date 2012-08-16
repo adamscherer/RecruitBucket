@@ -1,0 +1,45 @@
+<section class="utopia-widget">
+    <div class="utopia-widget-title">
+        <img src="/img/icons/user.png" class="utopia-widget-icon">
+        <span>Top Active Recruits</span>
+    </div>
+
+    <div class="utopia-widget-content">
+
+        <div class="row-fluid dataTables_filter">
+            <label>
+                <a class="span3 btn btn-primary x-add-recruit" href="#">
+                    <i class="icon-user icon-white"></i> Add Recruit 
+                </a>
+            </label>
+        </div>
+
+        <table class="table table-bordered">
+
+            <colgroup>
+                <col class="utopia-col-0">
+                <col class="utopia-col-1">
+                <col class="utopia-col-0">
+            </colgroup>
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>School</th>
+                    <th>Bucket Score</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% _.each(data.recruits, function(recruit, i) { %>
+                <tr>
+                    <td><a href="#/recruit/<%= recruit.id%>"><%= recruit.firstName%> <%= recruit.lastName%></a></a></td>
+                    <td><%= recruit.school%></td>
+                    <td><span class="badge badge-warning"><%= recruit.bucketScore.toFixed(2)%></span></td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+
+</section>

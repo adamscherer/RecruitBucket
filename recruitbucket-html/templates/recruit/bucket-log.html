@@ -1,0 +1,11 @@
+<div class="page-header">
+    <h3>Bucket Log</h3>
+</div>
+<% _.each(data.activities, function(activity, i) { %>
+    <div>
+        <h6><%= activity.creationTime %></h6>
+        <p>
+            Resume was uploaded to RecruitBucket
+        </p>
+    </div>
+<% }); %>

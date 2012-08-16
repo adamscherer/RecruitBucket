@@ -1,0 +1,58 @@
+<div class="modal hide fade">
+    <div class="modal-header">
+        <h3>Add Recruit</h3>
+    </div>
+    <form id="validation" action="/api/recruit" method="post" enctype="multipart/form-data" class="utopia-form-freeSpace form-horizontal" target="upload_iframe">
+    <div class="modal-body">
+        <div class="alert alert-error hide">
+            <strong>Hmmm...</strong> Double check your username and password and try submitting again.
+        </div>
+        <input type="hidden" name="htmlJsCallback" value="window.parent.addRecruitCallback" />
+        <input type="hidden" name="resume" value="true" />
+        <fieldset>
+            <div class="control-group">
+                <label class="control-label" for="firstName">First Name*:</label>
+
+                <div class="controls">
+                    <input id="firstName" class="input-fluid" type="text" name="firstName" value="">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="lastName">Last Name*:</label>
+
+                <div class="controls">
+                    <input id="lastName" class="input-fluid" type="text" name="lastName" value="">
+                    <br>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="school">School*:</label>
+
+                <div class="controls sample-form-chosen">
+                    <select id="school" name="school" data-placeholder="Select your school" style="250px;" class="chzn-select-deselect">
+                        <option value=""></option>
+                        <option value="Georgia Tech">Georgia Tech</option>
+                        <option value="Harvard">Harvard</option>
+                        <option value="Princeton">Princeton</option>
+                        <option value="Purdue University">Purdue University</option>
+                        <option value="University of Michigan">University of Michigan</option>
+                        <option value="University of North Carolina">University of North Carolina</option>
+                        <option value="Yale University">Yale University</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="resume" >Add Resume*:</label>
+
+                <div class="controls fileupload-buttonbar">
+                    <input id="resume" type="file" multiple="" name="file">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <button class="btn btn-primary" type="submit">Add recruit</button>
+    </div>
+    </form>
+</div>

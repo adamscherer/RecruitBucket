@@ -1,0 +1,14 @@
+<div class="page-header">
+    <p class="pull-right">
+        <a id="add-document" class="btn btn-primary" href="#">Add a Document</a>
+    </p>
+    <h3>Documents</h3>
+</div>
+<% _.each(data.documents, function(document, i) { %>
+    <div>
+        <h6><a href="/api/document/view/<%= document.fileId %>" target="_blank"><%= document.filename %></a></h6>
+        <p>
+            Added on <%= document.creationTime %>
+        </p>
+    </div>
+<% }); %>

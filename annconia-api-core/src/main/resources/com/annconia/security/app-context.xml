@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+xmlns:p="http://www.springframework.org/schema/p" xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+xsi:schemaLocation="
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd
+http://www.springframework.org/schema/util
+http://www.springframework.org/schema/util/spring-util-3.0.xsd
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+    <bean id="tokenService" class="org.springframework.security.core.token.KeyBasedPersistenceTokenService">
+        <property name="serverSecret" value="ZSD*FJDADFJ#$JASDFASDFA#JSDF" />
+        <property name="serverInteger" value="38472634" />
+        <property name="secureRandom">
+            <bean class="org.springframework.security.core.token.SecureRandomFactoryBean" />
+        </property>
+    </bean>
+    
+    <bean id="crowdSecurityUserRepository" class="com.annconia.security.repository.crowd.CrowdSecurityUserRepository" />
+    
+    <bean id="sessionManager" class="com.annconia.security.DefaultSessionManager">
+        <property name="userRepository" ref="securityUserRepository" />
+        <property name="sessionRepository" ref="sessionRepository" />
+        <property name="tokenService" ref="tokenService" />
+    </bean>
+    
+    <bean id="securityManager" class="com.annconia.security.DefaultSecurityManager">
+        <property name="userRepository" ref="securityUserRepository" />
+        <property name="groupRepository" ref="securityGroupRepository" />
+    </bean>
+
+</beans>

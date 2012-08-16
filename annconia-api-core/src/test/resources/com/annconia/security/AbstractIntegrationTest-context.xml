@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/mongo http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+	<!-- Sets up a Mongo DB instance. Configure host, port and credentials if needed. -->
+	<mongo:db-factory dbname="integration-tests"/>
+
+	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg ref="mongoDbFactory" />
+	</bean>
+
+	<!-- 
+		Activates repository support by scanning the configured package for interfaces
+		extending MongoRepository. Will try to derive queries from the methods declared
+		in the Repositories e.g. The repository support will use the bean called
+		'mongoTemplate'	by default. Use 'mongo-template-ref' attribute to customize.
+	-->
+	<mongo:repositories base-package="com.annconia.security.repository" create-query-indexes="true" />
+
+	<bean id="tokenService" class="org.springframework.security.core.token.KeyBasedPersistenceTokenService">
+		<property name="serverSecret" value="ZSD*FJDADFJ#$JASDFASDFA#JSDF" />
+		<property name="serverInteger" value="38472634" />
+		<property name="secureRandom">
+			<bean class="org.springframework.security.core.token.SecureRandomFactoryBean" />
+		</property>
+	</bean>
+
+	<bean id="sessionManager" class="com.annconia.security.DefaultSessionManager">
+		<property name="userRepository" ref="securityUserRepository" />
+		<property name="sessionRepository" ref="sessionRepository" />
+		<property name="tokenService" ref="tokenService" />
+	</bean>
+	
+	<bean id="securityManager" class="com.annconia.security.DefaultSecurityManager">
+		<property name="userRepository" ref="securityUserRepository" />
+		<property name="groupRepository" ref="securityGroupRepository" />
+	</bean>
+	
+</beans>

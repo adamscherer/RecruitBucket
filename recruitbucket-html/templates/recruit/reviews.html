@@ -1,0 +1,14 @@
+<div class="page-header">
+    <p class="pull-right">
+        <a class="btn btn-primary" href="#/recruit/<%= data.recruit.id %>/review">Add a Review</a>
+    </p>
+    <h3>Reviews</h3>
+</div>
+<% _.each(data.reviews, function(review, i) { %>
+    <div>
+        <h6><%= review.creationTime %></h6>
+        <p>
+            Resume reviewed by Sean Shelby
+        </p>
+    </div>
+<% }); %>

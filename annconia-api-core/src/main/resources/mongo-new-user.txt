@@ -1,0 +1,1 @@
+{"_class" : "com.annconia.security.entity.SecurityUser", "username" : "ascherer", "email" : "adam@ra.com", "password" : "8abc194ae7c577f3bbc378becfe18d72fb35e0b89eba810e18c15bf89b20c77f2dd5021cde695065", "firstName" : "Adam", "lastName" : "Scherer", "locked" : false, "expired" : false}
