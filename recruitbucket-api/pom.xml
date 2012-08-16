@@ -63,7 +63,16 @@
             </extension>
         </extensions>
     </build>
-
+    <repositories>
+        <repository>
+            <id>annconia-milestone</id>
+            <url>http://annconia-repo.s3.amazonaws.com/milestone</url>
+        </repository>
+        <repository>
+            <id>annconia-snapshot</id>
+            <url>http://annconia-repo.s3.amazonaws.com/snapshot</url>
+        </repository>
+    </repositories>
     <distributionManagement>
         <repository>
             <id>annconia-milestone</id>
