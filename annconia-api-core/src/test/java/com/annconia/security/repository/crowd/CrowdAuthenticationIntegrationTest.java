@@ -3,6 +3,7 @@ package com.annconia.security.repository.crowd;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
@@ -21,6 +22,7 @@ import com.atlassian.crowd.integration.rest.service.factory.RestCrowdHttpAuthent
  * 
  * @author Adam Scherer
  */
+@Ignore
 public class CrowdAuthenticationIntegrationTest {
 
 	@Test
