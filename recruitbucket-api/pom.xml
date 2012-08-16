@@ -39,7 +39,7 @@
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webAppConfig>
-                        <contextPath>/innergy</contextPath>
+                        <contextPath>/api</contextPath>
                         <jettyEnvXml>${basedir}/src/main/webapp/WEB-INF/jetty-env.xml</jettyEnvXml>
                     </webAppConfig>
                     <systemProperties>
