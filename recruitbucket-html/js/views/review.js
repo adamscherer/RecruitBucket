@@ -14,7 +14,7 @@ define([
         template : _.template(Template),
         
         initialize : function() {
-            _.bindAll(this, "load", "render", "save");
+            _.bindAll(this, "load", "render", "toggleSection", "save");
         },
         
         render : function() {
@@ -28,9 +28,19 @@ define([
         },
 
         events : {
-            "submit form" : "save"
+            "submit form" : "save",
+            "click div.btn-group button" : "toggleSection"
+                
         },
 
+        toggleSection : function(ev) {
+            var target = $(ev.target);
+            var value = target.data('value')
+            this.$el.find("#type").val(target.data('value'));
+            this.$el.find('.section').addClass('hide');
+            this.$el.find(target.data('section')).removeClass('hide');
+        },
+        
         save : function(ev) {
             this.review.set({recruitId : this.recruit.id});
             this.review.set($(ev.currentTarget).serializeObject());

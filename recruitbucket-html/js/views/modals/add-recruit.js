@@ -4,10 +4,10 @@ define([
     'Backbone',
     'GlobalEvents',
     'text!templates/modals/add-recruit-modal.html',
-    'jQuery_chosen',
-    'jQuery_ui',
-    'jQuery_tagedit',
-    'autoGrowInput'
+    'jQuery_chosen'//,
+    //'jQuery_ui',
+    //'jQuery_tagedit',
+    //'autoGrowInput'
 ], function($, _, Backbone, GlobalEvents, template) {
 
     // Since this data is submitted to an IFRAME, we are adding an accessible
@@ -35,7 +35,7 @@ define([
             this.modalEl = this.$el.find('.modal').modal({
                 show : true
             });
-
+            /*
             $('.show-tags2').tagedit({
                 allowEdit: false,
                 allowAdd: false,
@@ -71,6 +71,7 @@ define([
                         "Nothing selected, input was " + this.value );
                 }
             });
+            */
             //$(".chzn-select").chosen();
             //$(".chzn-select-deselect").chosen({
             //    allow_single_deselect : true

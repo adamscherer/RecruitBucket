@@ -8,12 +8,11 @@
             <div class="alert alert-info">No reviews have been added.</div>
         <% } %>
         <% _.each(data.reviews, function(review, i) { %>
-            <div>
-                <p>
-                    Resume reviewed by Sean Shelby
-                </p>
+            <% if (i != 0) { %> <hr/> <% } %>
+            <p>
+                <h4><%= (review.type == 'RESUME') ? '<b>Resume Review</b>' : 'Interview'%> completed by Sean Shelby</h4>
                 <h6><%= review.creationTime %></h6>
-            </div>
+            </p>
         <% }); %>
     </div>
 </section>

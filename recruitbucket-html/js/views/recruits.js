@@ -4,29 +4,41 @@ define([
     'Backbone',
     'GlobalEvents',
     'text!templates/recruits.html',
-    'views/recruits/recruit-list'
-], function($, _, Backbone, GlobalEvents, Template) {
-
-    var RecruitListView = require('views/recruits/recruit-list');
-
-    var SUBVIEWS = [
-        new RecruitListView()
-    ];
+    'collections/recruits',
+    'views/modals/add-recruit'
+], function($, _, Backbone, GlobalEvents, Template, RecruitsCollection, AddRecruitModal) {
 
     var View = Backbone.View.extend({
         template : _.template(Template),
 
-        render : function() {
+        initialize : function() {
+            _.bindAll(this, "render", "display");
 
+            // Once the collection is fetched re-render the view
+            RecruitsCollection.bind("reset", this.display);
+        },
+
+        render : function() {
+            RecruitsCollection.fetch();
+        },
+
+        display : function() {
             console.log('render recruits');
             this.$el.html(this.template({
-
+                data : {
+                    recruits : RecruitsCollection.toJSON()
+                }
             }));
+        },
 
-            _.each(SUBVIEWS, _.bind(function(view) {
-                view.render(this.model);
-            }, this));
+        events : {
+            "click .x-add-recruit" : "showAdd"
+        },
 
+        showAdd : function(ev) {
+            AddRecruitModal.render();
+
+            return false;
         }
     });
 

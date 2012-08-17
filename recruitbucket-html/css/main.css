@@ -3,7 +3,6 @@
 @import url("jquery.tagedit.css");
 @import url("ui-lightness/jquery-ui.css");
 @import url("gallery/modal.css");
-@import url("gallery/jquery.fileupload-ui.css");
 @import url("validationEngine.jquery.css");
 @import url("chosen.css");
 @import url("ie.css");
@@ -14,8 +13,21 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica neue", Helvetica, Arial, sans-serif;
 }
+h4 {
+    color: #333;
+    text-shadow: none;
+}
 form {
     margin: 0;
+}
+button {
+    width: 120px;
+}
+.btn-group button {
+    width: 180px;
+}
+.control-label {
+    font-weight: bold;
 }
 .modal-backdrop {
     background-color: #ffffff;
@@ -46,11 +58,11 @@ form {
 }
 .body-page.in {
     right: 0%;
-    -webkit-transition: opacity .3s linear, right .5s ease-out;
-    -moz-transition: opacity .3s linear, right .5s ease-out;
-    -ms-transition: opacity .3s linear, right .5s ease-out;
-    -o-transition: opacity .3s linear, right .5s ease-out;
-    transition: opacity .3s linear, right .5s ease-out;
+    -webkit-transition: opacity .3s linear, right .3s ease-out;
+    -moz-transition: opacity .3s linear, right .3s ease-out;
+    -ms-transition: opacity .3s linear, right .3s ease-out;
+    -o-transition: opacity .3s linear, right .3s ease-out;
+    transition: opacity .3s linear, right .3s ease-out;
 }
 .utopia-widget-content {
     background: #ffffff;

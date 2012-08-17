@@ -11,8 +11,7 @@ public class ReviewEntity extends AbstractEntity {
 
 	public static enum ReviewType {
 		RESUME,
-		PHONE,
-		IN_PERSON
+		INTERVIEW
 	}
 
 	public static enum ActiveEndReason {

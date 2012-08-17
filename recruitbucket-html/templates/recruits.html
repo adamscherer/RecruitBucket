@@ -3,11 +3,56 @@
     <div class="span12">
 
         <div class="row-fluid">
-            <div id="recruit-list-widget" class="span12"></div>
-        </div>
-
-        <div class="row-fluid">
-            <div id="recruit-map-widget" class="span12"></div>
+            <section class="utopia-widget">
+                <div class="utopia-widget-title">
+                    <!--<a class="btn btn-mini x-add-recruit" href="#"><img src="/img/icons/user.png" title="user"> Add Recruit</a>-->
+                    <a class="btn btn-primary btn-small x-add-recruit" href="#"><i class="icon-user icon-white"></i> Add Recruit</a>
+                    <img src="/img/icons/user.png" class="utopia-widget-icon">
+                    <span>All Recruits</span>
+                </div>
+            
+                <div class="utopia-widget-content">
+                    <table class="table table-bordered">
+            
+                        <colgroup>
+                            <col class="utopia-col-0">
+                            <col class="utopia-col-1">
+                            <col class="utopia-col-0">
+                            <col class="utopia-col-1">
+                            <col class="utopia-col-0">
+                            <col class="utopia-col-1">
+                        </colgroup>
+            
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>School</th>
+                            <th>GPA</th>
+                            <th>Bucket Score</th>
+                            <th>Phase</th>
+                            <th style="width: 100px">Actions</th>
+                        </tr>
+                        </thead>
+            
+                        <tbody>
+                            <% _.each(data.recruits, function(recruit, i) { %>
+                                <tr>
+                                    <td><a href="#/recruit/<%= recruit.id%>"><%= recruit.firstName%> <%= recruit.lastName%></a></a></td>
+                                    <td><%= recruit.school%></td>
+                                    <td><%= recruit.gpa.toFixed(2)%></td>
+                                    <td><span class="badge badge-warning"><%= recruit.bucketScore.toFixed(2)%></span></td>
+                                    <td><%= recruit.stage %></td>
+                                    <td>
+                                        <a href="#/recruit/<%= recruit.id%>" class="edit"><img src="/img/icons/pencil.png" alt="Edit"></a>
+                                        <a href="javascript:void(0)" class="delete"><img src="/img/icons/trash_can.png" alt="Delete"></a>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+            
+                </div>
+            </section>
         </div>
 
     </div>
