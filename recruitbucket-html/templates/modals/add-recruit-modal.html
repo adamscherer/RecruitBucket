@@ -1,34 +1,44 @@
 <div class="modal hide fade">
-    <div class="modal-header">
-        <h3>Add Recruit</h3>
-    </div>
-    <form id="validation" action="/api/recruit" method="post" enctype="multipart/form-data" class="utopia-form-freeSpace form-horizontal" target="upload_iframe">
+
+    <form id="validation" action="/api/recruit" method="post" enctype="multipart/form-data" class="" target="upload_iframe">
     <div class="modal-body">
         <div class="alert alert-error hide">
             <strong>Hmmm...</strong> Double check your username and password and try submitting again.
         </div>
         <input type="hidden" name="htmlJsCallback" value="window.parent.addRecruitCallback" />
         <input type="hidden" name="resume" value="true" />
-        <fieldset>
+        <fieldset class="login-box">
             <div class="control-group">
-                <label class="control-label" for="firstName">First Name*:</label>
-
+                <label class="control-label" for="firstName"><b>First Name</b></label>
                 <div class="controls">
-                    <input id="firstName" class="input-fluid" type="text" name="firstName" value="">
+                    <input id="firstName" class="span5" type="text" name="firstName" value="">
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="lastName">Last Name*:</label>
-
+                <label class="control-label" for="lastName"><b>Last Name</b></label>
                 <div class="controls">
-                    <input id="lastName" class="input-fluid" type="text" name="lastName" value="">
+                    <input id="lastName" class="span5" type="text" name="lastName" value="">
                     <br>
                 </div>
             </div>
             <div class="control-group">
+                <label class="control-label" for="school"><b>School</b></label>
+                <div class="controls">
+                    <input id="school" class="span5" type="text" name="school" value="">
+                    <br>
+                </div>
+            </div>
+            <!--
+            <div class="control-group">
                 <label class="control-label" for="school">School*:</label>
 
                 <div class="controls sample-form-chosen">
+                    <input type="text" name="tag[]" value="" class="show-tags2"/>
+
+                </div>
+            </div>
+            -->
+                    <!--
                     <select id="school" name="school" data-placeholder="Select your school" style="250px;" class="chzn-select-deselect">
                         <option value=""></option>
                         <option value="Georgia Tech">Georgia Tech</option>
@@ -39,13 +49,11 @@
                         <option value="University of North Carolina">University of North Carolina</option>
                         <option value="Yale University">Yale University</option>
                     </select>
-                </div>
-            </div>
+                    -->
             <div class="control-group">
-                <label class="control-label" for="resume" >Add Resume*:</label>
-
+                <label class="control-label" for="resume" ><b>Add Resume</b></label>
                 <div class="controls fileupload-buttonbar">
-                    <input id="resume" type="file" multiple="" name="file">
+                    <input id="resume" type="file" multiple="" name="file" style="font-size: 14px">
                 </div>
             </div>
         </fieldset>

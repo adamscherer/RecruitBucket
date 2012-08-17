@@ -1,12 +1,15 @@
 package com.roundarch.repository;
 
-import java.util.List;
-
-import com.roundarch.entity.Hometown;
-
+import com.roundarch.entity.TypeAheadResponse;
 
 public interface LookupDataRepository {
 
-	public List<Hometown> getAllHometowns();
+	public TypeAheadResponse getHometowns(String query, int size);
+
+	public TypeAheadResponse getColleges(String query, int size);
+
+	public TypeAheadResponse getInterviewers(String query, int size);
+
+	public TypeAheadResponse getQuestions(String query, int size);
 
 }

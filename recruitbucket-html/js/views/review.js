@@ -10,8 +10,7 @@ define([
 ], function($, _, Backbone, GlobalEvents, ReviewModel, RecruitModel, Template) {
 
     var View = Backbone.View.extend({
-        selector : "#body",
-        
+
         template : _.template(Template),
         
         initialize : function() {
@@ -20,14 +19,12 @@ define([
         
         render : function() {
             console.log('render review');
-            $(this.selector).html(this.$el.html(this.template({
+            this.$el.html(this.template({
                 data : {
                     review : this.review.toJSON(),
                     recruit : this.recruit.toJSON()
                 }
-            })));
-
-            GlobalEvents.trigger('render:sidebar', 'recruits');
+            }));
         },
 
         events : {
@@ -68,5 +65,5 @@ define([
         }
     });
 
-    return new View();
+    return View;
 });

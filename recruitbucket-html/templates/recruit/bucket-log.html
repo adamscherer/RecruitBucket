@@ -1,11 +1,18 @@
-<div class="page-header">
-    <h3>Bucket Log</h3>
-</div>
-<% _.each(data.activities, function(activity, i) { %>
-    <div>
-        <h6><%= activity.creationTime %></h6>
-        <p>
-            Resume was uploaded to RecruitBucket
-        </p>
+<section class="utopia-widget">
+    <div class="utopia-widget-title">
+        <span>Bucket Log</span>
     </div>
-<% }); %>
+    <div class="utopia-widget-content">
+        <% if (data.activities.length == 0) { %>
+            <div class="alert alert-info">There has been no activity on this recruit.</div>
+        <% } %>
+        <% _.each(data.activities, function(activity, i) { %>
+            <div>
+                <h6><%= activity.creationTime %></h6>
+                <p>
+                    Resume was uploaded to RecruitBucket
+                </p>
+            </div>
+        <% }); %>
+    </div>
+</section>

@@ -14,20 +14,20 @@ define([
     ];
 
     var View = Backbone.View.extend({
-        selector : "#body",
 
         template : _.template(Template),
 
         render : function() {
-            $(this.selector).html(this.$el.html(Template));
+            this.$el.html(this.template({
+
+            }));
 
             _.each(SUBVIEWS, function(view) {
                 view.render();
             });
 
-            GlobalEvents.trigger('render:sidebar', 'interviewers');
         }
     });
 
-    return new View();
+    return View;
 });

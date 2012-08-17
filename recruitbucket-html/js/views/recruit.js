@@ -26,8 +26,7 @@ define([
     ];
 
     var View = Backbone.View.extend({
-        selector : "#body",
-        
+
         template : _.template(Template),
 
         initialize : function() {
@@ -36,16 +35,13 @@ define([
 
         render : function() {
             console.log('render recruit');
-            $(this.selector).html(this.$el.html(this.template({
+            this.$el.html(this.template({
                 data : this.model.toJSON()
-            })));
+            }));
 
             _.each(SUBVIEWS, _.bind(function(view) {
                 view.render(this.model);
             }, this));
-
-            this.delegateEvents();
-            GlobalEvents.trigger('render:sidebar', 'recruits');
         },
 
         events : {
@@ -74,5 +70,5 @@ define([
         }
     });
 
-    return new View();
+    return View;
 });

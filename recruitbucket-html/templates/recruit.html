@@ -8,54 +8,100 @@
                 <%= data.firstName %> <%= data.lastName %>
             </li>
         </ul>
-        <section class="utopia-widget">
-            <div class="utopia-widget-content recruit-body">
-                <div class="row-fluid recruit-section">
-                    <div class="span3">
-                        <a href="#" class="thumbnail"> <img src="http://placehold.it/260x180" alt=""> </a>
-                    </div>
-                    <div class="span9 recruit-info">
-                        <div class="row-fluid">
-                            <div class="span12">
-                                <span class="badge badge-warning">BucketScore&trade; <%= data.bucketScore.toFixed(2) %></span>
-                                <h1>
-                                    <%= data.firstName %> <%= data.lastName %> 
-                                    <a id="edit-basic" href="#">Edit</a>
-                                </h1>
-                            </div>
-                        </div>
-                        <div class="row-fluid">
-                            <div class="span6">
-                                <h5><label>School:</label> <span><%= data.school %></span></h5>
-                                <h5><label>GPA:</label> <span><%= data.gpa.toFixed(2) %></span></h5>
-                                <h5><label>Major:</span> <span><%= data.major || '' %></span></h5>
-                                <h5><label>Hometown:</label> <span>Naperville, IL</span></h5>
-                                <h5><label>Email:</label> <span>adscherer@hotmail.com</span></h5>
-                                <h5><label>Phone Number:</label> <span>(630) 555-5555</span></h5>
-                                <h5><label>Address:</label>
-                                        <span>300 E Randolph Suite 4000
-                                        <br/>
-                                        Chicago IL 60601</span>
-                                </h5>
-                            </div>
-                            <div class="span6">
-                                <h5><label>Stage:</label> <span><%= data.stage %></span></h5>
-                                <h5><label>Active:</label> <span><%= data.active || 'Yes' %></span></h5>
-                                <h5><label>Foreign Language:</label> <span>No</span></h5>
-                                <h5><label>Social Organization:</label> <span>Phi Gamma Delta</span></h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row-fluid">
-                    <div id="documents" class="span6 well">&nbsp;</div>
-                    <div id="reviews" class="span6 well">&nbsp;</div>
-                </div>
-                <div class="row-fluid">
-                    <div id="bucket-log" class="span12 well">&nbsp;</div>
-                </div>
-                
+        <div class="row-fluid">
+            <div class="span12">
+                <h1 class="recruit-name">
+                    <%= data.firstName %> <%= data.lastName %>
+                    <span class="badge badge-warning">BucketScore&trade; <%= data.bucketScore.toFixed(2) %></span>
+                </h1>
             </div>
-        </section>
+        </div>
+        <div class="row-fluid">
+            <div class="span4 recruit-info">
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Basic Info</span>
+                        
+                    </div>
+                    <div class="utopia-widget-content">
+                        <h5><label>Stage:</label> <span><%= data.stage %></span></h5>
+                        <h5><label>Active:</label> <span><%= data.active || 'Yes' %></span></h5>
+                    </div>
+                </section>
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Contact Info</span>
+                    </div>
+                    <div class="utopia-widget-content">
+                        <h5><label>Email:</label> <span>adscherer@hotmail.com</span></h5>
+                        <h5><label>Phone Number:</label> <span>(630) 555-5555</span></h5>
+                        <h5><label>Address:</label>
+                                <span>300 E Randolph Suite 4000
+                                <br/>
+                                Chicago IL 60601</span>
+                        </h5>
+                    </div>
+                </section>
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Favorites</span>
+                    </div>
+                    <div class="utopia-widget-content recruit-info">
+                        <h5><label>Email:</label> <span>adscherer@hotmail.com</span></h5>
+                        <h5><label>Phone Number:</label> <span>(630) 555-5555</span></h5>
+                        <h5><label>Address:</label>
+                                <span>300 E Randolph Suite 4000
+                                <br/>
+                                Chicago IL 60601</span>
+                        </h5>
+                    </div>
+                </section>
+            </div>
+            <div class="span4 recruit-info">
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Education</span>
+                    </div>
+                    <div class="utopia-widget-content clearfix">
+                        <h5><label>School:</label> <span><%= data.school %></span></h5>
+                        <h5><label>GPA:</label> <span><%= data.gpa.toFixed(2) %></span></h5>
+                        <h5><label>Major:</label> <span><%= data.major || '' %></span></h5>
+                    </div>
+                </section>
+
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Work Experience</span>
+                    </div>
+                    <div class="utopia-widget-content clearfix">
+                        <h5><label>School:</label> <span><%= data.school %></span></h5>
+                        <h5><label>GPA:</label> <span><%= data.gpa.toFixed(2) %></span></h5>
+                        <h5><label>Major:</label> <span><%= data.major || '' %></span></h5>
+                    </div>
+                </section>
+                
+                <section class="utopia-widget">
+                    <div class="utopia-widget-title">
+                        <a class="btn btn-mini" href="#"><img src="/img/icons/pencil.png" title="pencil"> Edit</a>
+                        <span>Interests and Activities</span>
+                    </div>
+                    <div class="utopia-widget-content clearfix">
+                        <h5><label>School:</label> <span><%= data.school %></span></h5>
+                        <h5><label>GPA:</label> <span><%= data.gpa.toFixed(2) %></span></h5>
+                        <h5><label>Major:</label> <span><%= data.major || '' %></span></h5>
+                    </div>
+                </section>
+            </div>
+            <div class="span4">
+                <div id="reviews">&nbsp;</div>
+                <div id="documents">&nbsp;</div>
+                <div id="bucket-log">&nbsp;</div>
+            </div>
+        </div>
     </div>
 </div>

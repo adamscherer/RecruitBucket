@@ -1,12 +1,14 @@
 package com.roundarch.entity;
 
+
 public class Hometown {
 
 	private String id;
 	private String city;
 	private String state;
 	private int pop;
-	private GeoLocation log;
+
+	private double[] loc;
 
 	public String getId() {
 		return id;
@@ -40,12 +42,12 @@ public class Hometown {
 		this.pop = pop;
 	}
 
-	public GeoLocation getLog() {
-		return log;
+	public double[] getLoc() {
+		return loc;
 	}
 
-	public void setLog(GeoLocation log) {
-		this.log = log;
+	public void setLoc(double[] loc) {
+		this.loc = loc;
 	}
 
 }
