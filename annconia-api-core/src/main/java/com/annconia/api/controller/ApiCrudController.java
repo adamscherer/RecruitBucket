@@ -63,8 +63,6 @@ public abstract class ApiCrudController<ENTITY extends AbstractEntity, REPOSITOR
 			return new ResponseEntity<JsonResponse>(new JsonErrorResponse("entity.not.found"), HttpStatus.NOT_FOUND);
 		}
 
-		entity.storePreviousValues();
-
 		return new ResponseEntity<JsonResponse>(entity, HttpStatus.OK);
 	}
 

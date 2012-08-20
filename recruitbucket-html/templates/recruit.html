@@ -302,8 +302,8 @@
                         <span>Work Experience</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>Company Name:</label><span><%= data.school || '' %></span></h5>
-                        <h5><label>Time Frame:</label><span><%= data.gpa.toFixed(2) %></span></h5>
+                        <h5><label>Company Name:</label><span><%= data.companyName || '' %></span></h5>
+                        <h5><label>Time Frame:</label><span><%= data.gpa || '' %></span></h5>
                         <h5><label>Description:</label><span><%= data.major || '' %></span></h5>
                     </div>
                     <div class="utopia-widget-content edit">
@@ -404,13 +404,67 @@
             </div>
             <div class="span4">
                 <div id="reviews">
-                    &nbsp;
+                    <section class="utopia-widget recruit-info reviews">
+                        <div class="utopia-widget-title">
+                            <a class="btn btn-mini" href="#/recruit/<%= data.id %>/review"><img src="/img/icons/document.png" title="review"> Add Review</a>
+                            <span>Reviews</span>
+                        </div>
+                        <div class="utopia-widget-content">
+                            <% if (data.reviews.length == 0) { %>
+                                <div class="alert alert-info">No reviews have been added.</div>
+                            <% } %>
+                            <% _.each(data.reviews, function(review, i) { %>
+                                <% if (i != 0) { %> <hr/> <% } %>
+                                <p>
+                                    <h4><a href="#/recruit/<%= data.id %>/review/<%= review.id %>"><b><%= (review.type == 'RESUME') ? 'Resume Review' : 'Interview'%></b></a> completed by <%= review.interviewerFirstName || '' %> <%= review.interviewerLastName || '' %></span></h4>
+                                    <div class="comments"><%= review.overallComments %></div>
+                                    <div class="score">Overall Score: <%= review.overallScore %></div>
+                                    <h6><%= review.creationTime %></h6>
+                                </p>
+                            <% }); %>
+                        </div>
+                    </section>
                 </div>
                 <div id="documents">
-                    &nbsp;
+                    <section class="utopia-widget recruit-info">
+                        <div class="utopia-widget-title">
+                            <a id="add-document" class="btn btn-mini" href="#"><img src="/img/icons/document.png" title="document"> Add Document</a>
+                            <span>Documents</span>
+                        </div>
+                        <div class="utopia-widget-content  documents">
+                            <% if (data.documents.length == 0) { %>
+                                <div class="alert alert-info">No documents have been uploaded.</div>
+                            <% } %>
+                    
+                            <% _.each(data.documents, function(document, i) { %>
+                                <% if (i != 0) { %> <hr/> <% } %>
+                                <p>
+                                    <h4><img src="/img/icons2/document.png" class="utopia-icons2-small-img" title="document"> <a href="/api/document/view/<%= document.fileId %>" target="_blank"><%= document.filename %></a></h4>
+                                    <h6><%= document.creationTime %></h6>
+                                </p>
+                            <% }); %>
+                    
+                        </div>
+                    </section>
                 </div>
                 <div id="bucket-log">
-                    &nbsp;
+                    <section class="utopia-widget">
+                        <div class="utopia-widget-title">
+                            <span>Bucket Log</span>
+                        </div>
+                        <div class="utopia-widget-content">
+                            <% if (data.activities.length == 0) { %>
+                                <div class="alert alert-info">There has been no activity on this recruit.</div>
+                            <% } %>
+                            <% _.each(data.activities, function(activity, i) { %>
+                                <% if (i != 0) { %> <hr/> <% } %>
+                                <p>
+                                    <h4><span class="label label-success"><%= activity.interviewerUsername %></span> <%= activity.description %></h4>
+                                    <h6><%= activity.creationTime %></h6>
+                                </p>
+                            <% }); %>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>

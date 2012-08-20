@@ -5,7 +5,6 @@ define([
     'GlobalEvents',
     'models/recruit',
     'text!templates/recruit.html',
-    'views/modals/basic-info-edit',
     'views/modals/add-document',
     'views/recruit/reviews',
     'views/recruit/documents',
@@ -13,7 +12,12 @@ define([
     'jQuery_serialize'
 ], function($, _, Backbone, GlobalEvents, RecruitModel, Template) {
 
-    var BasicEditModal = require('views/modals/basic-info-edit');
+    var RecruitCompositeModel = Backbone.Model.extend({
+
+        urlRoot : '/api/recruit/composite'
+
+    });
+
     var AddDocumentModal = require('views/modals/add-document');
 
     var ReviewsView = require('views/recruit/reviews');
@@ -21,7 +25,7 @@ define([
     var BucketLogView = require('views/recruit/bucket-log');
 
     var SUBVIEWS = [
-        new ReviewsView(), new DocumentsView(), new BucketLogView()
+
     ];
 
     var View = Backbone.View.extend({
@@ -33,7 +37,7 @@ define([
         },
 
         load : function(id) {
-            this.model = new RecruitModel({
+            this.model = new RecruitCompositeModel({
                 id : id
             });
             this.model.bind("change", this.render);

@@ -72,8 +72,23 @@ public class RecruitControllerIntegrationTest extends AbstractControllerIntegrat
 		Map<String, Object> json = toJson(response);
 		Assert.assertEquals(200, response.getStatus());
 		Assert.assertEquals(json.get("id"), "1234");
+		Assert.assertNull(json.get("reviews"));
 	}
 
+	@Test
+	public void getComposite() throws Exception {
+		MockHttpServletRequest request = createJsonRequest();
+		request.setMethod("GET");
+		request.setRequestURI("/recruit/composite/1234");
+
+		MockHttpServletResponse response = handleRequest(request);
+
+		Map<String, Object> json = toJson(response);
+		Assert.assertEquals(200, response.getStatus());
+		Assert.assertEquals(json.get("id"), "1234");
+		Assert.assertNotNull(json.get("reviews"));
+	}
+	
 	@Test
 	public void createOrUpdate() throws Exception {
 		MockHttpServletRequest request = createJsonRequest();

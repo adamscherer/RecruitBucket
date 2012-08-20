@@ -23,6 +23,8 @@ import com.annconia.security.entity.PasswordUtility;
 import com.annconia.security.entity.SecurityUser;
 import com.annconia.security.entity.Session;
 import com.roundarch.entity.RecruitEntity;
+import com.roundarch.entity.ReviewEntity;
+import com.roundarch.entity.ReviewEntity.ReviewType;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
@@ -63,6 +65,13 @@ public abstract class AbstractControllerIntegrationTest {
 		recruit.setFirstName("TEST");
 		recruit.setLastName("USER");
 		operations.insert(recruit);
+		
+		ReviewEntity review = new ReviewEntity();
+		review.setRecruitId("1234");
+		review.setInterviewerId("0000");
+		review.setOverallScore(3);
+		review.setType(ReviewType.RESUME);
+		operations.insert(review);
 	}
 
 	protected MockHttpServletResponse handleRequest(HttpServletRequest request) {

@@ -35,9 +35,9 @@ button {
     filter: alpha(opacity=40);
 }
 .modal-body {
-    background: #F7F7F7;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #F7F7F7), color-stop(45%, white), color-stop(59%, white), color-stop(100%, #F7F7F7));
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#ffffff', GradientType=0);
+    background: #f7f7f7;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(45%, #f7f7f7), color-stop(59%, #f7f7f7), color-stop(100%, #f7f7f7));
+    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f7f7f7', GradientType=0);
 }
 .modal-footer {
     background-color: #ffffff;
@@ -102,11 +102,13 @@ div.dataTables_filter .btn {
     border-top: 1px solid #DDD;
     background: whiteSmoke;
 }
+.login-box {
+    margin-left: 15px;
+}
 .login-box input {
     font-size: 1.5em;
-    height: 26px;
-    padding: 10px;
-    line-height: 26px;
+    height: 36px;
+    line-height: 36px;
 }
 
 .spinner {

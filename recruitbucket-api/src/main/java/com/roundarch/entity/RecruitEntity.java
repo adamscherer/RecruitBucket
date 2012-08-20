@@ -7,6 +7,8 @@ import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
+import org.springframework.data.annotation.Transient;
+
 import com.annconia.api.entity.AbstractEntity;
 
 public class RecruitEntity extends AbstractEntity {
@@ -56,6 +58,15 @@ public class RecruitEntity extends AbstractEntity {
 
 	private Map<String, SchoolDetail> education = new HashMap<String, SchoolDetail>();
 	private Map<String, WorkDetail> work = new HashMap<String, WorkDetail>();
+
+	@Transient
+	private List<DocumentMetadataEntity> documents;
+
+	@Transient
+	private List<ReviewEntity> reviews;
+
+	@Transient
+	private List<ActivityEntity> activities;
 
 	public String getFirstName() {
 		return firstName;
@@ -273,6 +284,30 @@ public class RecruitEntity extends AbstractEntity {
 
 	public void setActiveEndReason(ActiveEndReason activeEndReason) {
 		this.activeEndReason = activeEndReason;
+	}
+
+	public List<DocumentMetadataEntity> getDocuments() {
+		return documents;
+	}
+
+	public void setDocuments(List<DocumentMetadataEntity> documents) {
+		this.documents = documents;
+	}
+
+	public List<ReviewEntity> getReviews() {
+		return reviews;
+	}
+
+	public void setReviews(List<ReviewEntity> reviews) {
+		this.reviews = reviews;
+	}
+
+	public List<ActivityEntity> getActivities() {
+		return activities;
+	}
+
+	public void setActivities(List<ActivityEntity> activities) {
+		this.activities = activities;
 	}
 
 	@Override
