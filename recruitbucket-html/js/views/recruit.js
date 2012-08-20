@@ -10,19 +10,18 @@ define([
     'views/recruit/reviews',
     'views/recruit/documents',
     'views/recruit/bucket-log',
+    'jQuery_serialize'
 ], function($, _, Backbone, GlobalEvents, RecruitModel, Template) {
 
     var BasicEditModal = require('views/modals/basic-info-edit');
     var AddDocumentModal = require('views/modals/add-document');
-    
+
     var ReviewsView = require('views/recruit/reviews');
     var DocumentsView = require('views/recruit/documents');
     var BucketLogView = require('views/recruit/bucket-log');
 
     var SUBVIEWS = [
-        new ReviewsView(),
-        new DocumentsView(),
-        new BucketLogView()
+        new ReviewsView(), new DocumentsView(), new BucketLogView()
     ];
 
     var View = Backbone.View.extend({
@@ -30,7 +29,15 @@ define([
         template : _.template(Template),
 
         initialize : function() {
-            _.bindAll(this, "load", "render", "basicEdit");
+            _.bindAll(this, "load", "render", "showEdit", "hideEdit", "save");
+        },
+
+        load : function(id) {
+            this.model = new RecruitModel({
+                id : id
+            });
+            this.model.bind("change", this.render);
+            this.model.fetch();
         },
 
         render : function() {
@@ -45,12 +52,29 @@ define([
         },
 
         events : {
-            "click #edit-basic" : "basicEdit",
-            "click #add-document" : "addDocument"
+            "click .x-edit" : "showEdit",
+            "click #add-document" : "addDocument",
+            "click .x-cancel" : "hideEdit",
+            "submit form" : "save"
         },
 
-        basicEdit : function(ev) {
-            BasicEditModal.showModal(this.model);
+        showEdit : function(ev) {
+            this._toggleEditing($(ev.target), 'addClass')
+
+            return false;
+        },
+
+        hideEdit : function(ev) {
+            this._toggleEditing($(ev.target), 'removeClass')
+
+            return false;
+        },
+
+        save : function(ev) {
+            console.log('save');
+            this.model.set($(ev.currentTarget).serializeObject());
+            this.model.save();
+            this._toggleEditing($(ev.target), 'removeClass')
 
             return false;
         },
@@ -60,13 +84,10 @@ define([
 
             return false;
         },
-        
-        load : function(id) {
-            this.model = new RecruitModel({
-                id : id
-            });
-            this.model.bind("change", this.render);
-            this.model.fetch();
+
+        _toggleEditing : function(target, action) {
+            var container = target.closest('.recruit-info');
+            container[action]('editing');
         }
     });
 

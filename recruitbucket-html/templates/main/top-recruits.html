@@ -17,7 +17,7 @@
             <thead>
                 <tr>
                     <th>Name</th>
-                    <th>School</th>
+                    <th>Stage</th>
                     <th>Bucket Score</th>
                 </tr>
             </thead>
@@ -26,7 +26,7 @@
                 <% _.each(data.recruits, function(recruit, i) { %>
                 <tr>
                     <td><a href="#/recruit/<%= recruit.id%>"><%= recruit.firstName%> <%= recruit.lastName%></a></a></td>
-                    <td><%= recruit.school%></td>
+                    <td><%= recruit.stage%></td>
                     <td><span class="badge badge-warning"><%= recruit.bucketScore.toFixed(2)%></span></td>
                 </tr>
                 <% }); %>

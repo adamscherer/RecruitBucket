@@ -10,7 +10,9 @@
         <% _.each(data.reviews, function(review, i) { %>
             <% if (i != 0) { %> <hr/> <% } %>
             <p>
-                <h4><%= (review.type == 'RESUME') ? '<b>Resume Review</b>' : 'Interview'%> completed by Sean Shelby</h4>
+                <h4><a href="#/recruit/<%= data.recruit.id %>/review/<%= review.id %>"><b><%= (review.type == 'RESUME') ? 'Resume Review' : 'Interview'%></a> completed by <%= review.interviewerFirstName || '' %> <%= review.interviewerLastName || '' %></span></h4>
+                <p><%= review.overallComments %></p>
+                <h6><b>Overall Score: <%= review.overallScore %></b></h6>
                 <h6><%= review.creationTime %></h6>
             </p>
         <% }); %>

@@ -88,6 +88,13 @@ public abstract class ApiCrudController<ENTITY extends AbstractEntity, REPOSITOR
 		return new ResponseEntity<JsonResponse>(savedEntity, headers, HttpStatus.OK);
 	}
 
+
+	@RequestMapping(value = "/{id}", headers = "X-HTTP-Method-Override=DELETE", method = { RequestMethod.POST, RequestMethod.DELETE })
+	@ResponseBody
+	public ResponseEntity<JsonResponse> deleteEntityById(@PathVariable String id) {
+		return deleteEntity(id);
+	}
+	
 	@RequestMapping(value = "/delete/{id}", method = { RequestMethod.POST, RequestMethod.DELETE })
 	@ResponseBody
 	public ResponseEntity<JsonResponse> deleteEntity(@PathVariable String id) {

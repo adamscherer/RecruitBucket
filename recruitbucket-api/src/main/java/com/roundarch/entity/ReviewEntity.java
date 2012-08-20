@@ -1,11 +1,14 @@
 package com.roundarch.entity;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import org.codehaus.jackson.map.annotate.JsonSerialize;
+
 import com.annconia.api.entity.AbstractEntity;
+import com.roundarch.repository.JsonIdSerializers.InterviewerSerializer;
+import com.roundarch.repository.JsonIdSerializers.RecruitSerializer;
 
 public class ReviewEntity extends AbstractEntity {
 
@@ -14,16 +17,12 @@ public class ReviewEntity extends AbstractEntity {
 		INTERVIEW
 	}
 
-	public static enum ActiveEndReason {
-		RESUME,
-		PHONE,
-		IN_PERSON
-	}
-
 	@NotNull
+	@JsonSerialize(using = InterviewerSerializer.class)
 	private String interviewerId;
 
 	@NotNull
+	@JsonSerialize(using = RecruitSerializer.class)
 	private String recruitId;
 
 	@NotNull
@@ -31,9 +30,6 @@ public class ReviewEntity extends AbstractEntity {
 
 	private int overallScore;
 	private String overallComments;
-	private boolean active;
-	private Date activeEndDate;
-	private ActiveEndReason activeEndReason;
 
 	private List<Response> responses;
 
@@ -75,30 +71,6 @@ public class ReviewEntity extends AbstractEntity {
 
 	public void setOverallComments(String overallComments) {
 		this.overallComments = overallComments;
-	}
-
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public Date getActiveEndDate() {
-		return activeEndDate;
-	}
-
-	public void setActiveEndDate(Date activeEndDate) {
-		this.activeEndDate = activeEndDate;
-	}
-
-	public ActiveEndReason getActiveEndReason() {
-		return activeEndReason;
-	}
-
-	public void setActiveEndReason(ActiveEndReason activeEndReason) {
-		this.activeEndReason = activeEndReason;
 	}
 
 	public List<Response> getResponses() {

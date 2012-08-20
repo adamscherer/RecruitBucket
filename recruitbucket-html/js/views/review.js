@@ -12,11 +12,11 @@ define([
     var View = Backbone.View.extend({
 
         template : _.template(Template),
-        
+
         initialize : function() {
             _.bindAll(this, "load", "render", "toggleSection", "save");
         },
-        
+
         render : function() {
             console.log('render review');
             this.$el.html(this.template({
@@ -29,20 +29,36 @@ define([
 
         events : {
             "submit form" : "save",
-            "click div.btn-group button" : "toggleSection"
-                
+            "click div.review-toggle button" : "toggleSection",
+            "click div.rating button" : "ratingClick"
         },
 
         toggleSection : function(ev) {
+            ev.preventDefault();
             var target = $(ev.target);
-            var value = target.data('value')
+            var value = target.data('value');
             this.$el.find("#type").val(target.data('value'));
             this.$el.find('.section').addClass('hide');
             this.$el.find(target.data('section')).removeClass('hide');
         },
-        
+
+        ratingClick : function(ev) {
+            ev.preventDefault();
+
+            var target = $(ev.target);
+            var parent = target.closest('.btn-group');
+            var value = target.data('value');
+            var label = target.data('label')
+            parent.find('input').val(target.data('value'));
+            parent.find('.rating-label').html(label);
+
+            // Don't return false because we want the event to bubble
+        },
+
         save : function(ev) {
-            this.review.set({recruitId : this.recruit.id});
+            this.review.set({
+                recruitId : this.recruit.id
+            });
             this.review.set($(ev.currentTarget).serializeObject());
             this.review.save(null, {
                 success : _.bind(function() {
@@ -62,7 +78,7 @@ define([
             this.review = new ReviewModel({
                 id : reviewId
             });
-            
+
             this.recruit.fetch({
                 success : _.bind(function() {
                     this.review.fetch({

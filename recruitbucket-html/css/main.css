@@ -144,6 +144,16 @@ div.dataTables_filter .btn {
     margin-left: 135px;
     display: block;
 }
+
+.recruit-info .edit {
+    display: none;
+}
+.recruit-info.editing .edit {
+    display: block;
+}
+.recruit-info.editing .read {
+    display: none;
+}
 .recruit-info h5 label {
     color: #9E9E9E;
     font-size: 12px;
@@ -202,4 +212,13 @@ ul.list-renderer li .value {
 .utopia-activity-feeds .info {
     color: #999;
     font-size: 12px;
+}
+.rating button {
+    width: 60px;
+}
+.rating .rating-label {
+    line-height: 28px;
+    font-weight: bold;
+    position: absolute;
+    left: 315px;
 }

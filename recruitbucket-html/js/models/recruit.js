@@ -7,7 +7,8 @@ define([
         defaults : {
             major : '',
             email : '',
-            phoneNumber : ''
+            homeNumber : '',
+            currentAddress : {}
         },
         initialize : function() {
 
