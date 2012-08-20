@@ -34,9 +34,6 @@ public class RecruitEntity extends AbstractEntity {
 	private double gpa;
 	private double bucketScore;
 
-	private Map<String, SchoolDetail> education = new HashMap<String, SchoolDetail>();
-	private Map<String, WorkDetail> work = new HashMap<String, WorkDetail>();
-
 	private String favoriteBook;
 	private String favoriteMovie;
 	private String favoriteBlog;
@@ -53,9 +50,12 @@ public class RecruitEntity extends AbstractEntity {
 	private ActiveEndReason activeEndReason;
 
 	@NotNull
-	private RecruitStage stage = RecruitStage.IDENTIFICATION;
+	private RecruitStage stage = RecruitStage.NOT_STAGED;
 
 	private List<String> foreignLanguages;
+
+	private Map<String, SchoolDetail> education = new HashMap<String, SchoolDetail>();
+	private Map<String, WorkDetail> work = new HashMap<String, WorkDetail>();
 
 	public String getFirstName() {
 		return firstName;

@@ -224,7 +224,7 @@
                         <span>Education</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>School:</label><span><%= data.school %></span></h5>
+                        <h5><label>School:</label><span><%= data.school || '' %></span></h5>
                         <h5><label>GPA:</label><span><%= data.gpa.toFixed(2) %></span></h5>
                         <h5><label>Concentration:</label><span><%= data.major || '' %></span></h5>
                         <h5><label>Graduated:</label><span><%= data.major || '' %></span></h5>
@@ -232,14 +232,14 @@
                     <div class="utopia-widget-content edit">
                         <form class="">
                             <div class="control-group">
-                                <label class="control-label" for="email">Email</label>
+                                <label class="control-label" for="email">School</label>
                                 <div class="controls">
                                     <input id="email" class="input-fluid" type="text" name="email" value="<%= data.email || ''%>">
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="mobileNumber">Mobile Number</label>
+                                <label class="control-label" for="mobileNumber">GPA</label>
                                 <div class="controls">
                                     <input id="mobileNumber" class="input-fluid" type="text" name="mobileNumber" value="<%= data.mobileNumber || ''%>">
                                     <br>
@@ -247,7 +247,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="phoneNumber">Home Number</label>
+                                <label class="control-label" for="phoneNumber">Concentration 1</label>
                                 <div class="controls">
                                     <input id="homeNumber" class="input-fluid" type="text" name="homeNumber" value="<%= data.homeNumber || ''%>">
                                     <br>
@@ -255,7 +255,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="address">Address</label>
+                                <label class="control-label" for="address">Concentration 2</label>
                                 <div class="controls">
                                     <input id="address" class="input-fluid" type="text" name="currentAddress[address]" value="<%= data.currentAddress.address || ''%>">
                                     <br>
@@ -263,7 +263,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="city">City</label>
+                                <label class="control-label" for="city">Concentration 3</label>
                                 <div class="controls">
                                     <input id="city" class="input-fluid" type="text" name="currentAddress[city]" value="<%= data.currentAddress.city || ''%>">
                                     <br>
@@ -271,7 +271,15 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="zipCode">Zip</label>
+                                <label class="control-label" for="zipCode">Graduated</label>
+                                <div class="controls">
+                                    <input id="zipCode" class="input-fluid" type="text" name="currentAddress[zipCode]" value="<%= data.currentAddress.zipCode || ''%>">
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <label class="control-label" for="zipCode">School Type</label>
                                 <div class="controls">
                                     <input id="zipCode" class="input-fluid" type="text" name="currentAddress[zipCode]" value="<%= data.currentAddress.zipCode || ''%>">
                                     <br>
@@ -294,21 +302,21 @@
                         <span>Work Experience</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>Company Name:</label><span><%= data.school %></span></h5>
+                        <h5><label>Company Name:</label><span><%= data.school || '' %></span></h5>
                         <h5><label>Time Frame:</label><span><%= data.gpa.toFixed(2) %></span></h5>
                         <h5><label>Description:</label><span><%= data.major || '' %></span></h5>
                     </div>
                     <div class="utopia-widget-content edit">
                         <form class="">
                             <div class="control-group">
-                                <label class="control-label" for="email">Email</label>
+                                <label class="control-label" for="email">Company Name</label>
                                 <div class="controls">
                                     <input id="email" class="input-fluid" type="text" name="email" value="<%= data.email || ''%>">
                                 </div>
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="mobileNumber">Mobile Number</label>
+                                <label class="control-label" for="mobileNumber">Start Year</label>
                                 <div class="controls">
                                     <input id="mobileNumber" class="input-fluid" type="text" name="mobileNumber" value="<%= data.mobileNumber || ''%>">
                                     <br>
@@ -316,7 +324,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="phoneNumber">Home Number</label>
+                                <label class="control-label" for="phoneNumber">End Year</label>
                                 <div class="controls">
                                     <input id="homeNumber" class="input-fluid" type="text" name="homeNumber" value="<%= data.homeNumber || ''%>">
                                     <br>
@@ -324,7 +332,7 @@
                             </div>
 
                             <div class="control-group">
-                                <label class="control-label" for="address">Address</label>
+                                <label class="control-label" for="address">Description</label>
                                 <div class="controls">
                                     <input id="address" class="input-fluid" type="text" name="currentAddress[address]" value="<%= data.currentAddress.address || ''%>">
                                     <br>
@@ -335,14 +343,6 @@
                                 <label class="control-label" for="city">City</label>
                                 <div class="controls">
                                     <input id="city" class="input-fluid" type="text" name="currentAddress[city]" value="<%= data.currentAddress.city || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="zipCode">Zip</label>
-                                <div class="controls">
-                                    <input id="zipCode" class="input-fluid" type="text" name="currentAddress[zipCode]" value="<%= data.currentAddress.zipCode || ''%>">
                                     <br>
                                 </div>
                             </div>

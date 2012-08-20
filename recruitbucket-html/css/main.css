@@ -222,3 +222,15 @@ ul.list-renderer li .value {
     position: absolute;
     left: 315px;
 }
+.reviews .comments {
+    margin: 0 0 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-style: italic;
+    color: #666;
+    height: 18px;
+}
+.reviews .score {
+    font-weight: bold;
+    font-size: 11px;
+}
