@@ -9,18 +9,24 @@
                 <label class="control-label" for="question">Question:</label>
 
                 <div class="controls">
-                    <textarea class="input-xlarge" id="question" name="question" rows="4"></textarea>
+                    <textarea class="input-xlarge" id="question" name="question" rows="6"><%= data.question || ''%></textarea>
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="category">Category:</label>
-
-                <div class="controls sample-form-chosen">
-                    <select id="category" name="category" data-placeholder="Select your category" style="width:82.5%;">
-                        <option value="SMART">Smart</option>
-                        <option value="MOTIVATED">Motivated</option>
-                        <option value="GETS_ALONG">Gets Along</option>
-                    </select>
+                <div class="controls">
+                    <div class="btn-group small" data-toggle="buttons-radio">
+                        <button class="btn <% if (data.category == 'SMART') { %>active <% } %>" data-toggle="button" data-value="SMART">
+                            Smart
+                        </button>
+                        <button class="btn <% if (data.category == 'MOTIVATED') { %>active <% } %>" data-toggle="button" data-value="MOTIVATED">
+                            Motivated
+                        </button>
+                        <button class="btn <% if (data.category == 'GETS_ALONG') { %>active <% } %>" data-toggle="button" data-value="GETS_ALONG">
+                            Gets Along
+                        </button>
+                        <input type="hidden" name="category" value="<%= data.category || ''%>"/>
+                    </div>
                 </div>
             </div>
         </fieldset>

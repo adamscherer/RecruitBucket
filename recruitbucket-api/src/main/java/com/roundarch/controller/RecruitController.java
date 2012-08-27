@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.server.ServerHttpRequest;
@@ -21,6 +22,7 @@ import com.annconia.api.json.JsonErrorResponse;
 import com.annconia.api.json.JsonResponse;
 import com.roundarch.entity.DocumentMetadataEntity;
 import com.roundarch.entity.RecruitEntity;
+import com.roundarch.entity.RecruitStage;
 import com.roundarch.repository.ActivityRepository;
 import com.roundarch.repository.DocumentMetadataRepository;
 import com.roundarch.repository.DocumentRepository;
@@ -107,6 +109,18 @@ public class RecruitController extends ApiPagingAndSortingController<RecruitEnti
 		}
 
 		return response;
+	}
+
+	@RequestMapping(value = "/all", params = "stage", method = RequestMethod.GET)
+	@ResponseBody
+	public ResponseEntity<Object> findAll(@RequestParam RecruitStage stage, PagingAndSorting pageSort) {
+
+		Page<RecruitEntity> page = repository.findByStage(stage, pageSort);
+		if (null == page) {
+			return new ResponseEntity<Object>(new JsonErrorResponse("entity.not.found"), HttpStatus.NOT_FOUND);
+		}
+
+		return new ResponseEntity<Object>(page, HttpStatus.OK);
 	}
 
 }

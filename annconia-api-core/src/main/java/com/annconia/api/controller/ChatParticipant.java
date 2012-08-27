@@ -57,7 +57,7 @@ public class ChatParticipant {
 
 	private void setResult(List<String> messages) {
 		try {
-			this.deferredResult.trySet(messages);
+			//this.deferredResult.trySet(messages);
 		} finally {
 			this.deferredResult = null;
 		}

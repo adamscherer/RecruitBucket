@@ -7,26 +7,195 @@
     <version>0.0.1-SNAPSHOT</version>
     <description>Annconia API Core</description>
 
+    <developers>
+        <developer>
+            <id>ascherer</id>
+            <name>Adam Scherer</name>
+            <email>adam@annconia.com</email>
+            <roles>
+                <role>Project Admin</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+5</timezone>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <jackson.version>1.9.2</jackson.version>
+        <slf4j.version>1.6.1</slf4j.version>
+        <java-version>1.6</java-version>
+        <org.aspectj-version>1.6.9</org.aspectj-version>
+        <org.slf4j-version>1.6.1</org.slf4j-version>
         <spring.version>3.2.0.BUILD-SNAPSHOT</spring.version>
+        <jackson.version>1.9.2</jackson.version>
         <querydsl.version>2.2.1</querydsl.version>
     </properties>
 
     <dependencies>
+        <!-- Logging -->
         <dependency>
-            <groupId>com.annconia</groupId>
-            <artifactId>annconia-core-dependency</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <type>pom</type>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j-version}</version>
         </dependency>
         <dependency>
-            <groupId>com.annconia</groupId>
-            <artifactId>annconia-util</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j-version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>${org.slf4j-version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.mail</groupId>
+                    <artifactId>mail</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>javax.jms</groupId>
+                    <artifactId>jms</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jdmk</groupId>
+                    <artifactId>jmxtools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.jmx</groupId>
+                    <artifactId>jmxri</artifactId>
+                </exclusion>
+            </exclusions>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- APACHE COMMONS DEPENDENCIES -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>4.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.6</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.4</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-digester</groupId>
+            <artifactId>commons-digester</artifactId>
+            <version>2.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.8.0</version>
+            <scope>runtime</scope>
+        </dependency>
+        
+        
+        <!-- Spring framework -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.8.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-logging</groupId>
+                    <artifactId>commons-logging</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>1.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>1.6.2</version>
             <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <type>jar</type>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Querydsl -->
@@ -54,15 +223,35 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
             <version>3.1.0.RELEASE</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-beans</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-expression</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <!-- Spring Web MVC Features -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        
         <!-- mongodb java driver -->
         <dependency>
             <groupId>org.mongodb</groupId>
@@ -80,17 +269,6 @@
             <version>2.4.3</version>
         </dependency>
 
-        <!-- Spring Web MVC Features -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
         <!-- BEANS VALIDATION WITH ANNOTATIONS -->
         <dependency>
             <groupId>javax.validation</groupId>
@@ -143,6 +321,11 @@
     <build>
         <extensions>
             <extension>
+                <groupId>org.cyclopsgroup</groupId>
+                <artifactId>awss3-maven-wagon</artifactId>
+                <version>0.1</version>
+            </extension>
+            <extension>
                 <groupId>org.springframework.build.aws</groupId>
                 <artifactId>org.springframework.build.aws.maven</artifactId>
                 <version>3.0.0.RELEASE</version>
@@ -165,6 +348,11 @@
 
     <repositories>
         <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Maven SNAPSHOT Repository</name>
+            <url>http://repo.springsource.org/libs-snapshot</url>
+        </repository>
+        <repository>
             <id>repository.springsource.snapshot</id>
             <name>SpringSource Snapshot Repository</name>
             <url>http://repo.springsource.org/snapshot</url>
@@ -173,6 +361,16 @@
             <id>SpringSource repository</id>
             <name>SpringSource Repository</name>
             <url>http://repo.springsource.org/milestone</url>
+        </repository>
+        <repository>
+            <id>spring-maven-release</id>
+            <name>Spring Maven Release Repository</name>
+            <url>http://maven.springframework.org/release</url>
+        </repository>
+        <repository>
+            <id>spring-maven-milestone</id>
+            <name>Spring Maven Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
         </repository>
         <repository>
             <id>maven-central</id>
@@ -191,9 +389,13 @@
             </snapshots>
         </repository>
         <repository>
-            <id>spring-snapshot</id>
-            <name>Spring Maven SNAPSHOT Repository</name>
-            <url>http://repo.springsource.org/libs-snapshot</url>
+            <id>apache.snapshots</id>
+            <name>Apache Snapshot Repository</name>
+            <url>http://repository.apache.org/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
         </repository>
     </repositories>
+
 </project>

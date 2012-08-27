@@ -21,7 +21,7 @@ import com.annconia.util.StringUtils;
 public class PagingAndSortingMethodArgumentResolver implements HandlerMethodArgumentResolver {
 
 	private static final int DEFAULT_PAGE = 1; // We're 1-based, not 0-based
-	private static final int DEFAULT_LIMIT = 20;
+	private static final int DEFAULT_LIMIT = 25;
 
 	private String pageParameter = "page";
 	private String limitParameter = "limit";

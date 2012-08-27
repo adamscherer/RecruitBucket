@@ -1,23 +1,17 @@
 package com.roundarch.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Transient;
 
 import com.annconia.api.entity.AbstractEntity;
+import com.annconia.api.entity.DeleteArchive;
 
-public class RecruitEntity extends AbstractEntity {
-
-	public static enum ActiveEndReason {
-		RESUME,
-		PHONE,
-		IN_PERSON
-	}
+public class RecruitEntity extends AbstractEntity implements DeleteArchive {
 
 	@NotNull
 	private String firstName;
@@ -31,9 +25,6 @@ public class RecruitEntity extends AbstractEntity {
 
 	private Address currentAddress = new Address();
 	private Address hometown;
-	private String school;
-	private String major;
-	private double gpa;
 	private double bucketScore;
 
 	private String favoriteBook;
@@ -47,17 +38,16 @@ public class RecruitEntity extends AbstractEntity {
 	private String foreignLanguage;
 	private String musicalInstrument;
 
-	private boolean active;
-	private Date activeEndDate;
-	private ActiveEndReason activeEndReason;
-
 	@NotNull
 	private RecruitStage stage = RecruitStage.NOT_STAGED;
 
+	private Date stageDate;
+
 	private List<String> foreignLanguages;
 
-	private Map<String, SchoolDetail> education = new HashMap<String, SchoolDetail>();
-	private Map<String, WorkDetail> work = new HashMap<String, WorkDetail>();
+	private ArrayList<SchoolDetail> education = new ArrayList<SchoolDetail>();
+
+	private ArrayList<WorkDetail> work = new ArrayList<WorkDetail>();
 
 	@Transient
 	private List<DocumentMetadataEntity> documents;
@@ -124,30 +114,6 @@ public class RecruitEntity extends AbstractEntity {
 		this.hometown = hometown;
 	}
 
-	public double getGpa() {
-		return gpa;
-	}
-
-	public void setGpa(double gpa) {
-		this.gpa = gpa;
-	}
-
-	public String getMajor() {
-		return major;
-	}
-
-	public void setMajor(String major) {
-		this.major = major;
-	}
-
-	public String getSchool() {
-		return school;
-	}
-
-	public void setSchool(String school) {
-		this.school = school;
-	}
-
 	public double getBucketScore() {
 		return bucketScore;
 	}
@@ -174,19 +140,19 @@ public class RecruitEntity extends AbstractEntity {
 		}
 	}
 
-	public Map<String, SchoolDetail> getEducation() {
+	public ArrayList<SchoolDetail> getEducation() {
 		return education;
 	}
 
-	public void setEducation(Map<String, SchoolDetail> education) {
+	public void setEducation(ArrayList<SchoolDetail> education) {
 		this.education = education;
 	}
 
-	public Map<String, WorkDetail> getWork() {
+	public ArrayList<WorkDetail> getWork() {
 		return work;
 	}
 
-	public void setWork(Map<String, WorkDetail> work) {
+	public void setWork(ArrayList<WorkDetail> work) {
 		this.work = work;
 	}
 
@@ -262,30 +228,6 @@ public class RecruitEntity extends AbstractEntity {
 		this.musicalInstrument = musicalInstrument;
 	}
 
-	public boolean isActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
-	}
-
-	public Date getActiveEndDate() {
-		return activeEndDate;
-	}
-
-	public void setActiveEndDate(Date activeEndDate) {
-		this.activeEndDate = activeEndDate;
-	}
-
-	public ActiveEndReason getActiveEndReason() {
-		return activeEndReason;
-	}
-
-	public void setActiveEndReason(ActiveEndReason activeEndReason) {
-		this.activeEndReason = activeEndReason;
-	}
-
 	public List<DocumentMetadataEntity> getDocuments() {
 		return documents;
 	}
@@ -312,8 +254,8 @@ public class RecruitEntity extends AbstractEntity {
 
 	@Override
 	public void storePreviousValues() {
-		addPreviousValue("school", getSchool());
-		addPreviousValue("major", getMajor());
+		addPreviousValue("education", getEducation());
+		addPreviousValue("work", getWork());
 		addPreviousValue("stage", getStage().name());
 	}
 

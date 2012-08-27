@@ -18,22 +18,27 @@ define([
     var RecruitStatisticsView = require('views/main/recruit-statistics');
     var InterviewerStatisticsView = require('views/main/interviewer-statistics');
 
-    var SUBVIEWS = [
-        new StatusView(),
-        new TopRecruitsView(),
-        new RecruitStatisticsView(),
-        new ActivityView(),
-        new InterviewerStatisticsView()
-    ];
-
     var View = Backbone.View.extend({
         initialize : function() {
             _.bindAll(this, "render");
-        },
-        render : function(el) {
+
             this.$el.html(MainTemplate);
 
-            _.each(SUBVIEWS, function(view) {
+            this.subviews = [
+                new StatusView({
+                    el : $("#status-section")
+                }),
+                new TopRecruitsView({
+                    el : $("#top-recruits-widget")
+                }),
+                new RecruitStatisticsView(),
+                new ActivityView(),
+                new InterviewerStatisticsView()
+            ]
+        },
+        render : function(el) {
+
+            _.each(this.subviews, function(view) {
                 view.render();
             });
         }

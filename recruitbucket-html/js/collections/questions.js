@@ -1,18 +1,12 @@
 define([
-		'jQuery', 'Underscore', 'Backbone', 'models/question'
-], function($, _, Backbone, Model) {
-	var Collection = Backbone.Collection.extend({
-		model : Model,
-		initialize : function() {
+    'jQuery', 'Underscore', 'Backbone', 'collections/paged-collection', 'models/question'
+], function($, _, Backbone, PagedCollection, Model) {
+    var Collection = PagedCollection.extend({
+        model : Model,
+        url : function() {
+            return '/api/question/all';
+        }
+    });
 
-		},
-		url : function() {
-			return '/api/question/all';
-		},
-		parse : function(resp, xhr) {
-			return resp.content;
-		}
-	});
-
-	return new Collection;
+    return new Collection;
 });

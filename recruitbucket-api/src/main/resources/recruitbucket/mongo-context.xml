@@ -17,8 +17,27 @@ http://www.springframework.org/schema/data/mongo http://www.springframework.org/
         <constructor-arg name="mongo" ref="mongo" />
         <constructor-arg name="databaseName" value="recruitbucket" />
     </bean>
+    <bean id="mongoDeleteDbFactory" class="org.springframework.data.mongodb.core.SimpleMongoDbFactory">
+        <constructor-arg name="mongo" ref="mongo" />
+        <constructor-arg name="databaseName" value="recruitbucket-archive" />
+    </bean>
+    <bean id="mongoContext" class="org.springframework.data.mongodb.core.mapping.MongoMappingContext" />
+    <bean id="mongoConverter" class="org.springframework.data.mongodb.core.convert.MappingMongoConverter">
+        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+        <constructor-arg name="mappingContext" ref="mongoContext" />
+        <property name="mapKeyDotReplacement" value="#" />
+    </bean>
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+        <constructor-arg name="mongoConverter" ref="mongoConverter" />
+    </bean>
+    <bean id="mongoDeleteArchive" class="com.annconia.api.repository.BeforeDeleteListener">
+        <property name="mongoOperations">
+            <bean class="org.springframework.data.mongodb.core.MongoTemplate">
+                <constructor-arg name="mongoDbFactory" ref="mongoDeleteDbFactory" />
+                <constructor-arg name="mongoConverter" ref="mongoConverter" />
+            </bean>
+        </property>
     </bean>
     <bean id="gridfsDb" factory-bean="mongoTemplate" factory-method="getDb" />
     <bean id="resumeRepository" class="com.roundarch.repository.impl.DocumentRepositoryImpl">

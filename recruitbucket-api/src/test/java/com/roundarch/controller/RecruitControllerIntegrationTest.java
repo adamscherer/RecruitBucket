@@ -110,7 +110,7 @@ public class RecruitControllerIntegrationTest extends AbstractControllerIntegrat
 		MockHttpServletRequest request = createJsonRequest();
 		request.setMethod("POST");
 		request.setRequestURI("/recruit/1234");
-		request.setContent("{\"firstName\" : \"TESTUPDATEJSON\", \"school\" : \"Yale University\"}".getBytes());
+		request.setContent("{\"firstName\" : \"TESTUPDATEJSON\"}".getBytes());
 
 		MockHttpServletResponse response = handleRequest(request);
 
@@ -120,6 +120,21 @@ public class RecruitControllerIntegrationTest extends AbstractControllerIntegrat
 		Assert.assertEquals(json.get("lastName"), "USER");
 	}
 
+	@Test
+	public void createOrUpdateSchoolListWithJson() throws Exception {
+		MockHttpServletRequest request = createJsonRequest();
+		request.setMethod("POST");
+		request.setRequestURI("/recruit/1234");
+		request.setContent("{'firstName' : 'TESTUPDATEJSON', 'education' : [{'name' : 'Yale University'}, {'name' : 'Harvard University'}]}".getBytes());
+
+		MockHttpServletResponse response = handleRequest(request);
+
+		Map<String, Object> json = toJson(response);
+		Assert.assertEquals(200, response.getStatus());
+		Assert.assertEquals(json.get("firstName"), "TESTUPDATEJSON");
+		Assert.assertEquals(json.get("lastName"), "USER");
+	}
+	
 	@Test
 	public void delete() throws Exception {
 		MockHttpServletRequest request = createJsonRequest();

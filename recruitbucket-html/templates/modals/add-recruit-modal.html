@@ -24,32 +24,10 @@
             <div class="control-group">
                 <label class="control-label" for="school"><b>School</b></label>
                 <div class="controls">
-                    <input id="school" class="span5" type="text" name="school" value="">
-                    <br>
+                    <input id="school" class="span5" type="text" name="education[0].name" value="" data-provide="typeahead-school" autocomplete="off">
                 </div>
+                <input type="hidden" name="education[0].current" value="true" />
             </div>
-            <!--
-            <div class="control-group">
-                <label class="control-label" for="school">School*:</label>
-
-                <div class="controls sample-form-chosen">
-                    <input type="text" name="tag[]" value="" class="show-tags2"/>
-
-                </div>
-            </div>
-            -->
-                    <!--
-                    <select id="school" name="school" data-placeholder="Select your school" style="250px;" class="chzn-select-deselect">
-                        <option value=""></option>
-                        <option value="Georgia Tech">Georgia Tech</option>
-                        <option value="Harvard">Harvard</option>
-                        <option value="Princeton">Princeton</option>
-                        <option value="Purdue University">Purdue University</option>
-                        <option value="University of Michigan">University of Michigan</option>
-                        <option value="University of North Carolina">University of North Carolina</option>
-                        <option value="Yale University">Yale University</option>
-                    </select>
-                    -->
             <div class="control-group">
                 <label class="control-label" for="resume" ><b>Add Resume</b></label>
                 <div class="controls fileupload-buttonbar">

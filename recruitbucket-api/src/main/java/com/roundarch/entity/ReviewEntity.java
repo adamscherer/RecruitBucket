@@ -81,4 +81,10 @@ public class ReviewEntity extends AbstractEntity {
 		this.responses = responses;
 	}
 
+	@Override
+	public void storePreviousValues() {
+		addPreviousValue("recruitId", getRecruitId());
+		addPreviousValue("interviewerId", getInterviewerId());
+	}
+
 }

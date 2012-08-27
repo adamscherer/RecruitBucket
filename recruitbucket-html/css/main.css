@@ -26,21 +26,29 @@ button {
 .btn-group button {
     width: 180px;
 }
+.btn-group.small button {
+    width: 115px;
+}
+.btn-group.x-small button {
+    width: 80px;
+}
 .control-label {
     font-weight: bold;
 }
 .modal-backdrop {
-    background-color: #ffffff;
-    opacity: 0.4;
-    filter: alpha(opacity=40);
+    background-color: #cce1ea;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
 }
-.modal-body {
-    background: #f7f7f7;
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(45%, #f7f7f7), color-stop(59%, #f7f7f7), color-stop(100%, #f7f7f7));
-    filter: progid:dximagetransform.microsoft.gradient(startColorstr='#f7f7f7', endColorstr='#f7f7f7', GradientType=0);
+.modal-backdrop.fade.in {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
 }
 .modal-footer {
-    background-color: #ffffff;
+    background-color: #f7f7f7;
+}
+.modal-body.shaded {
+    background-color: #f7f7f7;
 }
 .sidebar-container {
     position: relative;
@@ -63,6 +71,16 @@ button {
     -ms-transition: opacity .3s linear, right .3s ease-out;
     -o-transition: opacity .3s linear, right .3s ease-out;
     transition: opacity .3s linear, right .3s ease-out;
+}
+#status-details {
+    display: none;
+}
+
+.utopia-chart-legend {
+    cursor: pointer;
+}
+.utopia-chart-legend.active {
+    background-color: #EFEFEF;
 }
 .utopia-widget-content {
     background: #ffffff;
@@ -186,7 +204,7 @@ div.dataTables_filter .btn {
 ul.list-renderer {
     padding: 0;
     list-style: none;
-    margin: 0;
+    margin: 0 0 0 15px;
 }
 ul.list-renderer li {
     background: transparent;
@@ -235,4 +253,16 @@ ul.list-renderer li .value {
 .reviews .score {
     font-weight: bold;
     font-size: 11px;
+}
+.form-horizontal.small .control-label {
+    width: 100px;
+}
+.form-horizontal.small .controls {
+    margin-left: 110px;
+}
+.form-horizontal.small .form-actions {
+    padding-left: 115px;
+}
+.form-horizontal.small .input-fluid {
+    width: 95%;
 }

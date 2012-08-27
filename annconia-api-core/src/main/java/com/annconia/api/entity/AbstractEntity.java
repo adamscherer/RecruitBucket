@@ -28,7 +28,7 @@ public class AbstractEntity implements JsonResponse {
 
 	@JsonIgnore
 	@Transient
-	private Map<String, String> previousValues;
+	private Map<String, Object> previousValues;
 
 	public String getId() {
 		return id;
@@ -54,17 +54,17 @@ public class AbstractEntity implements JsonResponse {
 		this.updateTime = updateTime;
 	}
 
-	public Map<String, String> getPreviousValues() {
+	public Map<String, Object> getPreviousValues() {
 		return previousValues;
 	}
 
-	public void setPreviousValues(Map<String, String> previousValues) {
+	public void setPreviousValues(Map<String, Object> previousValues) {
 		this.previousValues = previousValues;
 	}
 
-	public void addPreviousValue(String key, String value) {
+	public void addPreviousValue(String key, Object value) {
 		if (previousValues == null) {
-			previousValues = new HashMap<String, String>();
+			previousValues = new HashMap<String, Object>();
 		}
 
 		previousValues.put(key, value);
@@ -79,15 +79,23 @@ public class AbstractEntity implements JsonResponse {
 			return false;
 		}
 
-		return (StringUtils.isNotEquivalent(previousValues.get(key), newValue));
+		return (StringUtils.isNotEquivalent(getPreviousValueAsString(key), newValue));
 	}
 
-	public String getPreviousValue(String key) {
+	public Object getPreviousValue(String key) {
 		if (previousValues == null) {
 			return null;
 		}
 
 		return previousValues.get(key);
+	}
+
+	public String getPreviousValueAsString(String key) {
+		if (previousValues == null) {
+			return null;
+		}
+
+		return StringUtils.valueOf(previousValues.get(key), null);
 	}
 
 	public void storePreviousValues() {

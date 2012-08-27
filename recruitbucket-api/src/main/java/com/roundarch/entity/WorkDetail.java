@@ -1,6 +1,6 @@
 package com.roundarch.entity;
 
-public class WorkDetail {
+public class WorkDetail implements Named {
 
 	public enum WorkType {
 
@@ -9,10 +9,12 @@ public class WorkDetail {
 	}
 
 	private String name;
+	private String position;
 	private int startYear;
 	private int endYear;
 	private String description;
 	private WorkType type;
+	private boolean current;
 
 	public String getName() {
 		return name;
@@ -20,6 +22,14 @@ public class WorkDetail {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
 	}
 
 	public int getStartYear() {
@@ -52,6 +62,14 @@ public class WorkDetail {
 
 	public void setType(WorkType type) {
 		this.type = type;
+	}
+
+	public boolean isCurrent() {
+		return current;
+	}
+
+	public void setCurrent(boolean current) {
+		this.current = current;
 	}
 
 }

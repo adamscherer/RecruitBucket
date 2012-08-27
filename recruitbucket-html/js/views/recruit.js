@@ -5,12 +5,11 @@ define([
     'GlobalEvents',
     'models/recruit',
     'text!templates/recruit.html',
+    'text!templates/recruit-school-form.html',
+    'text!templates/recruit-work-form.html',
     'views/modals/add-document',
-    'views/recruit/reviews',
-    'views/recruit/documents',
-    'views/recruit/bucket-log',
     'jQuery_serialize'
-], function($, _, Backbone, GlobalEvents, RecruitModel, Template) {
+], function($, _, Backbone, GlobalEvents, RecruitModel, Template, SchoolForm, WorkForm) {
 
     var RecruitCompositeModel = Backbone.Model.extend({
 
@@ -19,14 +18,6 @@ define([
     });
 
     var AddDocumentModal = require('views/modals/add-document');
-
-    var ReviewsView = require('views/recruit/reviews');
-    var DocumentsView = require('views/recruit/documents');
-    var BucketLogView = require('views/recruit/bucket-log');
-
-    var SUBVIEWS = [
-
-    ];
 
     var View = Backbone.View.extend({
 
@@ -47,19 +38,20 @@ define([
         render : function() {
             console.log('render recruit');
             this.$el.html(this.template({
-                data : this.model.toJSON()
+                data : this.model.toJSON(),
+                schoolForm : _.template(SchoolForm),
+                workForm : _.template(WorkForm)
             }));
-
-            _.each(SUBVIEWS, _.bind(function(view) {
-                view.render(this.model);
-            }, this));
         },
 
         events : {
             "click .x-edit" : "showEdit",
             "click #add-document" : "addDocument",
             "click .x-cancel" : "hideEdit",
-            "submit form" : "save"
+            "submit form" : "save",
+            "click .x-add-school" : "addSchool",
+            "click .x-add-work" : "addWork",
+            "click .btn-group button" : "buttonGroupClick"
         },
 
         showEdit : function(ev) {
@@ -74,11 +66,52 @@ define([
             return false;
         },
 
+        buttonGroupClick : function(ev) {
+            ev.preventDefault();
+
+            var target = $(ev.target);
+            var parent = target.closest('.btn-group');
+            var value = target.data('value');
+            parent.find('input').val(target.data('value'));
+
+            // Don't return false because we want the event to bubble
+        },
+        
         save : function(ev) {
             console.log('save');
-            this.model.set($(ev.currentTarget).serializeObject());
+            ev.preventDefault();
+
+            var form = $(ev.currentTarget);
+            if (form.data('collection')) {
+                var obj = {}
+                var data = [];
+                form.find('fieldset').each(function() {
+                    data.push($(this).serializeObject());
+                });
+                obj[form.data('collection')] = data;
+                this.model.set(obj);
+            } else {
+                this.model.set(form.serializeObject());
+            }
+
             this.model.save();
             this._toggleEditing($(ev.target), 'removeClass')
+
+            return false;
+        },
+
+        addSchool : function(ev) {
+            $(ev.target).closest('.edit').find('.data').append(_.template(SchoolForm, {
+                data : {}
+            }));
+
+            return false;
+        },
+
+        addWork : function(ev) {
+            $(ev.target).closest('.edit').find('.data').append(_.template(WorkForm, {
+                data : {}
+            }));
 
             return false;
         },

@@ -1,59 +1,37 @@
-define([
-    'jQuery',
-    'Underscore',
-    'Backbone',
-    'GlobalEvents',
-    'text!templates/recruits.html',
-    'collections/recruits',
-    'views/modals/add-recruit'
-], function($, _, Backbone, GlobalEvents, Template, RecruitsCollection, AddRecruitModal) {
+define(
+    [
+        'jQuery',
+        'Underscore',
+        'Backbone',
+        'GlobalEvents',
+        'text!templates/recruits.html',
+        'collections/recruits',
+        'views/paged-view',
+        'views/modals/add-recruit'
+    ],
+    function($, _, Backbone, GlobalEvents, Template, RecruitsCollection, PagedView, AddRecruitModal) {
 
-    var View = Backbone.View.extend({
-        template : _.template(Template),
+        var RecruitsCollectionInstance = new RecruitsCollection();
 
-        initialize : function() {
-            _.bindAll(this, "render", "display", "destroy");
+        var View = PagedView.extend({
+            template : _.template(Template),
 
-            // Once the collection is fetched re-render the view
-            RecruitsCollection.bind("reset", this.display);
-        },
+            collection : RecruitsCollectionInstance,
 
-        render : function() {
-            RecruitsCollection.fetch();
-        },
+            defaultSort : 'firstName',
 
-        display : function() {
-            console.log('render recruits');
-            this.$el.html(this.template({
-                data : {
-                    recruits : RecruitsCollection.toJSON()
-                }
-            }));
-        },
+            postInitialize : function() {
+                this.events = _.extend(this.pageEvents, {
+                    "click .x-add-recruit" : "showAdd"
+                });
+            },
 
-        events : {
-            "click .x-add-recruit" : "showAdd",
-            "click .delete" : "destroy"
-        },
+            showAdd : function(ev) {
+                AddRecruitModal.render();
 
-        showAdd : function(ev) {
-            AddRecruitModal.render();
-
-            return false;
-        },
-
-        destroy : function(ev) {
-            var id = $(ev.target).parents('td').data('id');
-            var recruit = RecruitsCollection.get(id);
-            if (recruit) {
-                recruit.destroy({success : _.bind(function() {
-                    this.render();
-                }, this)});
+                return false;
             }
+        });
 
-            return false;
-        }
+        return View;
     });
-
-    return View;
-});

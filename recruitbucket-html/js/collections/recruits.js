@@ -1,18 +1,14 @@
 define([
-		'jQuery', 'Underscore', 'Backbone', 'models/recruit'
-], function($, _, Backbone, Model) {
-	var Collection = Backbone.Collection.extend({
-		model : Model,
-		initialize : function() {
+    'jQuery', 'Underscore', 'Backbone', 'collections/paged-collection', 'models/recruit'
+], function($, _, Backbone, PagedCollection, Model) {
+    var Collection = PagedCollection.extend({
 
-		},
-		url : function() {
-			return '/api/recruit/all';
-		},
-		parse : function(resp, xhr) {
-			return resp.content;
-		}
-	});
+        model : Model,
 
-	return new Collection;
+        url : function() {
+            return '/api/recruit/all';
+        }
+    });
+
+    return Collection;
 });

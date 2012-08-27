@@ -90,7 +90,7 @@ define([
             this.sidebarTrigger('recruits');
         },
         showReview : function(id, reviewId) {
-            ReviewInstance.load(id);
+            ReviewInstance.load(id, reviewId);
             this.activatePage(ReviewInstance);
             this.sidebarTrigger('recruits');
         },

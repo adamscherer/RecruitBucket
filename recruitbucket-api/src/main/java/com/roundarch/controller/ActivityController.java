@@ -17,7 +17,7 @@ import com.annconia.api.PagingAndSorting;
 import com.annconia.api.controller.ApiPagingAndSortingController;
 import com.roundarch.entity.ActivityEntity;
 import com.roundarch.repository.ActivityRepository;
-import com.roundarch.repository.listener.ActivityListener;
+import com.roundarch.repository.impl.ActivityListener;
 
 @SuppressWarnings("restriction")
 @Controller

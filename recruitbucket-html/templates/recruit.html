@@ -79,7 +79,7 @@
                         <span>Contact Info</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>Email:</label><span><%= data.email %></span></h5>
+                        <h5><label>Email:</label><span><%= data.email || ''%></span></h5>
                         <h5><label>Mobile Number:</label><span><%= data.mobileNumber || ''%></span></h5>
                         <h5><label>Home Number:</label><span><%= data.homeNumber || ''%></span></h5>
                         <h5><label>Address:</label><span>
@@ -224,68 +224,36 @@
                         <span>Education</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>School:</label><span><%= data.school || '' %></span></h5>
-                        <h5><label>GPA:</label><span><%= data.gpa.toFixed(2) %></span></h5>
-                        <h5><label>Concentration:</label><span><%= data.major || '' %></span></h5>
-                        <h5><label>Graduated:</label><span><%= data.major || '' %></span></h5>
+                        <% if (data.education.length == 0) { %>
+                            <div class="alert alert-info">No schools have been added.</div>
+                        <% } %>
+                        <% _.each(data.education, function(education, i) { %>
+                            <% if (i != 0) { %> <hr/> <% } %>
+                            <p>
+                                <h5><label>School:</label><span><%= education.name || '' %></span></h5>
+                                <h5><label>GPA:</label><span><%= (_.isNumber(education.gpa)) ? education.gpa.toFixed(2) : '' %></span></h5>
+                                <h5><label>Concentration 1:</label><span><%= education.concentration1 || '' %></span></h5>
+                                <h5><label>Concentration 2:</label><span><%= education.concentration2 || '' %></span></h5>
+                                <h5><label>Type:</label><span><%= education.type || '' %></span></h5>
+                                <h5><label>Graduated:</label><span><%= education.graduated || 'No' %></span></h5>
+                            </p>
+                        <% }); %>
                     </div>
                     <div class="utopia-widget-content edit">
-                        <form class="">
-                            <div class="control-group">
-                                <label class="control-label" for="email">School</label>
+                        <form class="form-horizontal small" data-collection="education">
+                            <div class="data">
+                                <%if (data.education.length == 0) {%>
+                                    <%= schoolForm({data : {}}) %>
+                                <%}%>
+                                <% _.each(data.education, function(education, i) { %>
+                                    <%= schoolForm({data : education}) %>
+                                <% }); %>
+                            </div>
+                            <div>
                                 <div class="controls">
-                                    <input id="email" class="input-fluid" type="text" name="email" value="<%= data.email || ''%>">
+                                    <a class="btn btn-mini x-add-school" href="#"><img src="/img/icons/pencil.png" title="pencil"> Add School</a>
                                 </div>
                             </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="mobileNumber">GPA</label>
-                                <div class="controls">
-                                    <input id="mobileNumber" class="input-fluid" type="text" name="mobileNumber" value="<%= data.mobileNumber || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="phoneNumber">Concentration 1</label>
-                                <div class="controls">
-                                    <input id="homeNumber" class="input-fluid" type="text" name="homeNumber" value="<%= data.homeNumber || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="address">Concentration 2</label>
-                                <div class="controls">
-                                    <input id="address" class="input-fluid" type="text" name="currentAddress[address]" value="<%= data.currentAddress.address || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="city">Concentration 3</label>
-                                <div class="controls">
-                                    <input id="city" class="input-fluid" type="text" name="currentAddress[city]" value="<%= data.currentAddress.city || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="zipCode">Graduated</label>
-                                <div class="controls">
-                                    <input id="zipCode" class="input-fluid" type="text" name="currentAddress[zipCode]" value="<%= data.currentAddress.zipCode || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="zipCode">School Type</label>
-                                <div class="controls">
-                                    <input id="zipCode" class="input-fluid" type="text" name="currentAddress[zipCode]" value="<%= data.currentAddress.zipCode || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-primary">
                                     Save
@@ -302,51 +270,35 @@
                         <span>Work Experience</span>
                     </div>
                     <div class="utopia-widget-content clearfix read">
-                        <h5><label>Company Name:</label><span><%= data.companyName || '' %></span></h5>
-                        <h5><label>Time Frame:</label><span><%= data.gpa || '' %></span></h5>
-                        <h5><label>Description:</label><span><%= data.major || '' %></span></h5>
+                        <% if (data.work.length == 0) { %>
+                            <div class="alert alert-info">No work experience has been added.</div>
+                        <% } %>
+                        <% _.each(data.work, function(work, i) { %>
+                            <% if (i != 0) { %> <hr/> <% } %>
+                            <p>
+                                <h5><label>Company Name:</label><span><%= work.name || '' %></span></h5>
+                                <h5><label>Position:</label><span><%= work.position || '' %></span></h5>
+                                <h5><label>Time Frame:</label><span><%= work.gpa || '' %></span></h5>
+                                <h5><label>Description:</label><span><%= work.description || '' %></span></h5>
+                            </p>
+                        <% }); %>
                     </div>
                     <div class="utopia-widget-content edit">
-                        <form class="">
-                            <div class="control-group">
-                                <label class="control-label" for="email">Company Name</label>
-                                <div class="controls">
-                                    <input id="email" class="input-fluid" type="text" name="email" value="<%= data.email || ''%>">
-                                </div>
+                        <form class="form-horizontal small" data-collection="work">
+                            <div class="data">
+                                <%if (data.work.length == 0) {%>
+                                    <%= workForm({data : {}}) %>
+                                <%}%>
+                                <% _.each(data.work, function(work, i) { %>
+                                    <%= workForm({data : work}) %>
+                                <% }); %>
                             </div>
 
-                            <div class="control-group">
-                                <label class="control-label" for="mobileNumber">Start Year</label>
+                            <div>
                                 <div class="controls">
-                                    <input id="mobileNumber" class="input-fluid" type="text" name="mobileNumber" value="<%= data.mobileNumber || ''%>">
-                                    <br>
+                                    <a class="btn btn-mini x-add-work" href="#"><img src="/img/icons/pencil.png" title="pencil"> Add Work Experience</a>
                                 </div>
                             </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="phoneNumber">End Year</label>
-                                <div class="controls">
-                                    <input id="homeNumber" class="input-fluid" type="text" name="homeNumber" value="<%= data.homeNumber || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="address">Description</label>
-                                <div class="controls">
-                                    <input id="address" class="input-fluid" type="text" name="currentAddress[address]" value="<%= data.currentAddress.address || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div class="control-group">
-                                <label class="control-label" for="city">City</label>
-                                <div class="controls">
-                                    <input id="city" class="input-fluid" type="text" name="currentAddress[city]" value="<%= data.currentAddress.city || ''%>">
-                                    <br>
-                                </div>
-                            </div>
-
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-primary">
                                     Save

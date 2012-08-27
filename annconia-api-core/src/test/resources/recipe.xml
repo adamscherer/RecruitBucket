@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<autnresponse xmlns:autn='http://schemas.autonomy.com/aci/'>
+	<action>QUERY</action>
+	<response>SUCCESS</response>
+	<responsedata>
+		<autn:numhits>1</autn:numhits>
+		<autn:totalhits>1</autn:totalhits>
+		<autn:totaldbdocs>2749</autn:totaldbdocs>
+		<autn:totaldbsecs>2749</autn:totaldbsecs>
+		<autn:hit>
+			<autn:reference>http://corpcmstsdev01:8080/lscs/v1/document/path/vendor_articles/adam/48/83/ddf45f804ac8e6fee2cea0a158ea0acd.html/?project=//corpcmstsdev01/default/main/resource_center
+			</autn:reference>
+			<autn:id>27459</autn:id>
+			<autn:section>0</autn:section>
+			<autn:weight>83.58</autn:weight>
+			<autn:links>PANCAK</autn:links>
+			<autn:database>PREVIEW</autn:database>
+			<autn:title>Cystic fibrosis - nutritional considerations</autn:title>
+			<autn:content>
+				<DOCUMENT>
+					<DREREFERENCE>http://corpcmstsdev01:8080/lscs/v1/document/path/vendor_articles/adam/48/83/ddf45f804ac8e6fee2cea0a158ea0acd.html/?project=//corpcmstsdev01/default/main/resource_center</DREREFERENCE>
+					<LINK_URL>http://corpcmstsdev01:8080/lscs/v1/document/path/vendor_articles/adam/48/83/ddf45f804ac8e6fee2cea0a158ea0acd.html/?project=//corpcmstsdev01/default/main/resource_center</LINK_URL>
+					<DRECONTENT>&lt;html xmlns:adam="urn:DataProcessor"
+						xmlns:ax="http://www.adam.com"
+						xmlns:exsl="http://exslt.org/common"&gt;&lt;head&gt;&lt;META
+						http-equiv="Content-Type" content="text/html;
+						charset=utf-8"&gt;&lt;script language="javascript"
+						src="https://ssl.adam.com/graphics/global/jquery-1.3.2.min.js"&gt;Â &lt;/script&gt;&lt;script
+						type="text/javascript"
+						src="https://ssl.adam.com/graphics/global/swfobject.js"&gt;Â &lt;/script&gt;&lt;title&gt;Cystic
+						fibrosis - nutritional considerations&lt;/title&gt;&lt;meta
+						name="Keywords"
+						content="add,butter,calories,cheese,considerations,cystic,enzymes,fibrosis,hot,milk,nutritional,protein,"&gt;&lt;script
+						language="javascript" type="text/javascript"&gt;&lt;!-- function
+						ADAM() { } --&gt;&lt;/script&gt;&lt;link rel="stylesheet"
+						type="text/css"
+						href="https://ssl.adam.com/css/941/default.css"&gt;&lt;/head&gt;&lt;body
+						onload="ADAM()"&gt;&lt;div class="ADAMContent"
+						align="center"&gt;&lt;style type="text/css"&gt; .ADAMContent {
+						Width: 545px; position: relative; margin: 0px auto; top: 0;
+						z-index: 0; } &lt;/style&gt;&lt;script
+						language="javascript"&gt;&lt;!-- function
+						ADAMSearchRedirect(queryString) { var resultCount = ''; if
+						(resultCount == '') resultCount = 20; document.location =
+						'https://ssl.adam.com/content.aspx?productId=26&amp;pid=26&amp;gid=000001&amp;site=healthways.adam.com&amp;login=HEAL8123'
+						+ queryString + '&amp;count=' + resultCount; } function
+						checkEnter(event) { var iAscii = event.keyCode ? event.keyCode :
+						event.which ? event.which : event.charCode; if (iAscii == null)
+						return false; if (iAscii == 13) ADAMDefaultSearch('Article'); }
+						function ADAMToggleMedicalSearch() { var taxoCheck =
+						document.getElementById('ADAMMedicalCodeCheckBox'); var
+						taxoPullDown = document.getElementById('ADAMTaxaVocab'); if
+						(taxoCheck.checked) taxoPullDown.style.display = "inline"; else
+						taxoPullDown.style.display = "none"; } function
+						ADAMDefaultSearch(searchScope) { var searchBox =
+						document.getElementById('ADAMSearchBox'); if (searchBox.value ==
+						'') { alert('Please be more specific with your search.');
+						searchBox.focus(); } else { ADAMSearchRedirect('&amp;keyword=' +
+						searchBox.value + '&amp;searchScope=' + searchScope); } }
+						--&gt;&lt;/script&gt;&lt;style type="text/css"&gt; .ADAMContent {
+						Width: 545px; position: relative; margin: 0px auto; top: 0;
+						z-index: 0; } &lt;/style&gt;&lt;h2&gt;Cystic fibrosis -
+						nutritional considerations&lt;/h2&gt;&lt;h3&gt; Definition
+						&lt;/h3&gt;&lt;span style="line-height:18px"&gt;&lt;p&gt;Cystic
+						fibrosis (CF) is a potentially life-threatening disease that
+						causes thick, sticky mucus to build up in the lungs and digestive
+						tract. Persons with cystic fibrosis need to eat high calorie and
+						high protein foods throughout the day. &lt;/p&gt;&lt;p&gt;This
+						article discusses the nutritional needs for persons with CF. For
+						specific information about the disease itself, see the article on
+						&lt;a
+						href="https://ssl.adam.com/content.aspx?productId=117&amp;amp;pid=1&amp;amp;gid=000107&amp;amp;site=healthways.adam.com&amp;amp;login=HEAL8123"&gt;cystic
+						fibrosis&lt;/a&gt;. &lt;/p&gt;&lt;/span&gt;&lt;h3&gt; Function
+						&lt;/h3&gt;&lt;span style="line-height:18px"&gt;&lt;p&gt;Your
+						pancreas is an organ that sits in your belly behind your stomach.
+						An important job of your pancreas is to make enzymes. These
+						enzymes help your body digest and absorb protein and fats.
+						However, the build-up of sticky mucus in the pancreas from cystic
+						fibrosis can lead to serious problems, including:
+						&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Stools that contain mucus, are foul
+						smelling, or float &lt;/li&gt;&lt;li&gt;Gas, bloating, or
+						distended belly &lt;/li&gt;&lt;li&gt;Problems getting enough
+						protein, fat, and calories, in your
+						diet&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Because of these problems,
+						people with cystic fibrosis may have a hard time maintaining a
+						normal weight. Even if your weight is normal, you may not be
+						getting the correct nutrition. Children with cystic fibrosis may
+						not grow or develop correctly. &lt;/p&gt;&lt;/span&gt;&lt;h3&gt;
+						Recommendations &lt;/h3&gt;&lt;span
+						style="line-height:18px"&gt;&lt;p&gt;The following are methods for
+						adding &lt;a
+						href="https://ssl.adam.com/content.aspx?productId=117&amp;amp;pid=1&amp;amp;gid=002467&amp;amp;site=healthways.adam.com&amp;amp;login=HEAL8123"&gt;protein&lt;/a&gt;
+						and calories to the diet. In addition to these tips, make sure
+						that you are taking a multivitamin containing vitamins A, D, E and
+						K. &lt;/p&gt;&lt;p&gt;Enzymes, vitamins, and salt:
+						&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Most people with cystic fibrosis
+						must take pancreatic enzymes. These enzymes help your body absorb
+						fat and protein. Taking them all the time will decrease or get rid
+						of foul-smelling stools, gas, and bloating.
+						&lt;/li&gt;&lt;li&gt;Take enzymes with all meals and snacks.
+						&lt;/li&gt;&lt;li&gt;Talk to your doctor about increasing or
+						decreasing your enzymes, depending on your symptoms.
+						&lt;/li&gt;&lt;li&gt;Ask your doctor about taking vitamins A, D,
+						E, K, and extra calcium. Special formulas exist for patients with
+						CF. &lt;/li&gt;&lt;li&gt;People who live in hot climates may need
+						a small amount of extra table
+						salt.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Eating patterns:
+						&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Eat whenever you are hungry. This
+						may mean eating several small meals throughout the day.
+						&lt;/li&gt;&lt;li&gt;Keep a variety of nutritious snack foods
+						around. Try to snack on something every hour. Try cheese and
+						crackers, muffins, or trail mix. &lt;/li&gt;&lt;li&gt;Make an
+						effort to eat regularly, even if it's only a few bites; or include
+						a nutritional supplement or milkshake. &lt;/li&gt;&lt;li&gt;Be
+						flexible. If you aren't hungry at dinner time, make breakfast,
+						mid-morning snacks, and lunch your main
+						meals.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Getting more calories and
+						protein: &lt;/p&gt;&lt;ul&gt;&lt;li&gt;Add grated cheese to soups,
+						sauces, casseroles, vegetables, mashed potatoes, rice, noodles or
+						meat loaf. &lt;/li&gt;&lt;li&gt;Use whole milk, half and half,
+						cream, or enriched milk in cooking or beverages. Enriched milk has
+						non-fat dry milk powder added to it. &lt;/li&gt;&lt;li&gt;Spread
+						peanut butter on bread products or use it as a dip for raw
+						vegetables and fruit. Add peanut butter to sauces or use on
+						waffles. &lt;/li&gt;&lt;li&gt;Skim milk powder adds protein -- try
+						adding 2 tablespoons of dry skim milk powder in addition to the
+						amount of regular milk in recipes. &lt;/li&gt;&lt;li&gt;Add
+						marshmallows to fruit or hot chocolate. Add raisins, dates, or
+						chopped nuts and brown sugar to hot or cold cereals or for snacks.
+						&lt;/li&gt;&lt;li&gt;A teaspoon of butter or margarine adds 45
+						calories to foods. Mix it into hot foods such as soups,
+						vegetables, mashed potatoes, cooked cereal, and rice. Serve it on
+						hot foods -- hot breads, pancakes, or waffles absorb more butter
+						than cool ones. &lt;/li&gt;&lt;li&gt;Use sour cream or yogurt on
+						vegetables such as potatoes, beans, carrots, or squash. They can
+						also be used as a dressing for fruit. &lt;/li&gt;&lt;li&gt;Breaded
+						meat, chicken, and fish have more calories than broiled or plain
+						roasted. &lt;/li&gt;&lt;li&gt;Add extra cheese on top of frozen
+						prepared pizza. &lt;/li&gt;&lt;li&gt;Add coarsely chopped hard
+						cooked egg and cheese cubes to a tossed salad.
+						&lt;/li&gt;&lt;li&gt;Serve cottage cheese with canned or fresh
+						fruit. &lt;/li&gt;&lt;li&gt;Add grated cheeses, tuna, shrimp,
+						crabmeat, ground beef, diced ham or sliced boiled eggs to sauces,
+						rice, casseroles, and
+						noodles.&lt;/li&gt;&lt;/ul&gt;&lt;/span&gt;&lt;h3&gt; References
+						&lt;/h3&gt;&lt;span style="line-height:18px"&gt;&lt;p&gt;Stallings
+						VA, Stark LF, Robinson KA, Feranchak AP, Quinton H. Evidence-based
+						practice recommendations for nutrition-related management of
+						children and adults with cystic fibrosis and pancreatic
+						insufficiency: Results of a systematic review. &lt;em&gt;Journal
+						of the American Dietetic Association&lt;/em&gt;. 2008;108:832-839.
+						&lt;/p&gt;&lt;p&gt;Boat TF, Acton JD. Cystic fibrosis. In:
+						Kliegman RM, Behrman RE, Jenson HB, Stanton BF, eds.
+						&lt;em&gt;Nelson Textbook of Pediatrics&lt;/em&gt;. 18th ed.
+						Philadelphia, Pa: Saunders Elsevier;2007:chap 400.
+						&lt;/p&gt;&lt;/span&gt;&lt;div&gt;&lt;hr&gt;&lt;div
+						class="ADAMReviewInfo"&gt; Review Date: 5/16/2011&lt;br&gt;
+						Reviewed By: David Zieve, MD, MHA, Medical Director, A.D.A.M.,
+						Inc., and Denis Hadjiliadis, MD, Assistant Professor of Medicine,
+						Division of Pulmonary, Allergy and Critical Care, University of
+						Pennsylvania, Philadelphia, PA. &lt;/div&gt;&lt;/div&gt;&lt;div
+						class="ADAMDisclaimer"&gt;&lt;div class="ADAMURAC"&gt;&lt;script
+						language="JavaScript" type="text/javascript"&gt;&lt;!-- var URL =
+						document.location.href; var SSL = URL.substr(0, 5); if (SSL ==
+						'https') { document.write('&lt;script
+						src="https://ssl.adam.com/urac/urac.js"
+						type="text/javascript"&gt;&lt;' + '/script&gt;'); } else {
+						document.write('&lt;script
+						src="http://default.adam.com/urac/urac.js"
+						type="text/javascript"&gt;&lt;' + '/script&gt;'); }
+						--&gt;&lt;/script&gt;&lt;/div&gt;&lt;div&gt;The information
+						provided herein should not be used during any medical emergency or
+						for the diagnosis or treatment of any medical condition. A
+						licensed medical professional should be consulted for diagnosis
+						and treatment of any and all medical conditions. Call 911 for all
+						medical emergencies. Links to other sites are provided for
+						information only -- they do not constitute endorsements of those
+						other sites. Â© 1997- &lt;script language="JavaScript"
+						type="text/javascript"&gt; var today = new Date() var year =
+						today.getFullYear() document.write(year) &lt;/script&gt; A.D.A.M.,
+						Inc. Any duplication or distribution of the information contained
+						herein is strictly prohibited.&lt;/div&gt;&lt;div
+						align="center"&gt;&lt;a href="http://www.adam.com"
+						target="_blank"&gt;&lt;img
+						src="https://ssl.adam.com/graphics/global/hdr_ftradamlogo.gif"
+						width="77" height="15" border="0"
+						alt="adam.com"&gt;&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;Â &lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&lt;script
+						type="text/javascript"&gt; var gaJsHost = (("https:" ==
+						document.location.protocol) ? "https://ssl." : "http://www.");
+						document.write(unescape("%3Cscript src='" + gaJsHost +
+						"google-analytics.com/ga.js'
+						type='text/javascript'%3E%3C/script%3E"));
+						&lt;/script&gt;&lt;script type="text/javascript"&gt; try { var
+						adamPageTracker = _gat._getTracker("UA-10893143-7");
+						adamPageTracker._trackPageview(); } catch(err) {} try { var
+						adamGlobalPageTracker = _gat._getTracker("UA-7878983-1");
+						adamGlobalPageTracker._trackPageview(); } catch(err) {}
+						&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</DRECONTENT>
+					<DATABASE>PREVIEW</DATABASE>
+					<CONTEXTS>
+						<CONTEXT>
+							<DISH_TYPES>Sauces,Bread,Salad,Pizza,Beverages</DISH_TYPES>
+							<AUTNREFERENCE>https://ssl.adam.com/content.aspx?productId=117&amp;pid=1&amp;gid=002437&amp;site=healthways.adam.com&amp;login=HEAL8123</AUTNREFERENCE>
+							<FOCUS_AREA_CODES>MTS::LRVNXJE8Z,MTS::hwSSBBelly,MTS::hwSSBDrugsOther,MTS::hwSTFChild,MTS::hwSSBMTStomach</FOCUS_AREA_CODES>
+							<DATE>5/16/2011</DATE>
+							<FILE_TYPE>HTML</FILE_TYPE>
+							<TITLE>Cystic fibrosis - nutritional considerations</TITLE>
+							<CONTENTTYPE>MTS::hwArticle</CONTENTTYPE>
+							<START_DATE>2011-01-01</START_DATE>
+							<FOCUS_AREA>Body,Belly,Other,Children,Stomach</FOCUS_AREA>
+							<RESOURCE_TYPE>Article</RESOURCE_TYPE>
+							<END_DATE>9999-12-31</END_DATE>
+							<DISH_TYPES_CODES>MTS::hwDishSauces,MTS::hwDishBread,MTS::hwDishSalad,MTS::hwDishPizza,MTS::hwDishBeverages</DISH_TYPES_CODES>
+						</CONTEXT>
+					</CONTEXTS>
+					<DRETITLE>Cystic fibrosis - nutritional considerations</DRETITLE>
+				</DOCUMENT>
+			</autn:content>
+		</autn:hit>
+		<autn:warning>Security operations were attempted, but the license does
+			not permit it</autn:warning>
+		<autn:warning>The value of the 'summary' parameter was invalid
+		</autn:warning>
+	</responsedata>
+</autnresponse>

@@ -1,4 +1,4 @@
-package com.roundarch.repository.listener;
+package com.roundarch.repository.impl;
 
 import java.util.Iterator;
 import java.util.concurrent.ArrayBlockingQueue;
@@ -43,7 +43,7 @@ public class ActivityListener implements ApplicationListener<RepositoryEvent> {
 		for (Iterator<DeferredResult<Page<ActivityEntity>>> iterator = activeListeners.iterator(); iterator.hasNext();) {
 			DeferredResult<Page<ActivityEntity>> listener = iterator.next();
 			try {
-				listener.trySet(activity);
+				listener.setResult(activity);
 			} finally {
 				iterator.remove();
 			}

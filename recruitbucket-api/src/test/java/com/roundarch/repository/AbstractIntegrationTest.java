@@ -47,7 +47,7 @@ public abstract class AbstractIntegrationTest {
 		RecruitEntity recruit = new RecruitEntity();
 		recruit.setFirstName("John");
 		recruit.setLastName("Doe");
-		recruit.setSchool("Harvard");
+		//recruit.setSchool("Harvard");
 		recruit.setBucketScore(4.75);
 		return recruit;
 	}

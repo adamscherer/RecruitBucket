@@ -192,8 +192,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
-            <type>jar</type>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -260,15 +258,14 @@
             </extension>
         </extensions>
     </build>
-
+<!--  
     <pluginRepositories>
-        <!-- Necessary for the build extension -->
         <pluginRepository>
             <id>spring-plugins-release</id>
             <url>http://repo.springsource.org/plugins-release</url>
         </pluginRepository>
     </pluginRepositories>
-
+-->
     <distributionManagement>
         <repository>
             <id>annconia-milestone</id>

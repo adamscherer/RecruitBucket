@@ -1,7 +1,6 @@
 package com.roundarch.entity;
 
-
-public class SchoolDetail {
+public class SchoolDetail implements Named {
 
 	public enum SchoolType {
 
@@ -20,6 +19,7 @@ public class SchoolDetail {
 	private double gpa;
 	private boolean graduated;
 	private SchoolType type;
+	private boolean current;
 
 	public String getName() {
 		return name;
@@ -91,6 +91,14 @@ public class SchoolDetail {
 
 	public void setType(SchoolType type) {
 		this.type = type;
+	}
+
+	public boolean isCurrent() {
+		return current;
+	}
+
+	public void setCurrent(boolean current) {
+		this.current = current;
 	}
 
 }

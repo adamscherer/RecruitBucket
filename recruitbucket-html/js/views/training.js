@@ -3,29 +3,54 @@ define([
     'Underscore',
     'Backbone',
     'GlobalEvents',
+    'collections/questions',
+    'views/paged-view',
     'text!templates/training.html',
-    'views/training/questions-list'
-], function($, _, Backbone, GlobalEvents, Template) {
+    'views/modals/question',
+], function($, _, Backbone, GlobalEvents, QuestionsCollection, PagedView, Template) {
 
-    var QuestionsListView = require('views/training/questions-list');
+    var QuestionModal = require('views/modals/question');
 
-    var SUBVIEWS = [
-        new QuestionsListView()
-    ];
-
-    var View = Backbone.View.extend({
+    var View = PagedView.extend({
 
         template : _.template(Template),
 
-        render : function() {
-            this.$el.html(this.template({
+        collection : QuestionsCollection,
 
-            }));
+        defaultSort : "category",
 
-            _.each(SUBVIEWS, function(view) {
-                view.render();
+        postInitialize : function() {
+            _.bindAll(this, "showAdd", "showEdit", "modalSave");
+
+            this.events = _.extend(this.pageEvents, {
+                "click .x-add-question" : "showAdd",
+                "click .edit" : "showEdit"
             });
 
+            QuestionModal.on('question:save', this.modalSave);
+        },
+
+        modalSave : function(model) {
+            if (model) {
+                QuestionsCollection.add(model);
+            }
+
+            QuestionModal.hideModal();
+            this.display();
+        },
+
+        showAdd : function(ev) {
+            QuestionModal.render();
+
+            return false;
+        },
+
+        showEdit : function(ev) {
+            var id = $(ev.target).parents('td').data('id');
+            var question = QuestionsCollection.get(id);
+            QuestionModal.render(question);
+
+            return false;
         }
     });
 

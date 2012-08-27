@@ -23,8 +23,7 @@ public class RecruitRepositoryIntegrationTest extends AbstractIntegrationTest {
 		RecruitEntity recruit = new RecruitEntity();
 		recruit.setFirstName("Sam");
 		recruit.setLastName("Tester");
-		recruit.setSchool("Harvard");
-		
+
 		repository.save(recruit);
 	}
 

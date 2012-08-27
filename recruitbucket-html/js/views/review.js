@@ -5,9 +5,10 @@ define([
     'GlobalEvents',
     'models/review',
     'models/recruit',
+    'collections/interviewers',
     'text!templates/review.html',
     'jQuery_serialize'
-], function($, _, Backbone, GlobalEvents, ReviewModel, RecruitModel, Template) {
+], function($, _, Backbone, GlobalEvents, ReviewModel, RecruitModel, InterviewersCollection, Template) {
 
     var View = Backbone.View.extend({
 
@@ -15,6 +16,8 @@ define([
 
         initialize : function() {
             _.bindAll(this, "load", "render", "toggleSection", "save");
+            
+            InterviewersCollection.fetch();
         },
 
         render : function() {
@@ -22,7 +25,8 @@ define([
             this.$el.html(this.template({
                 data : {
                     review : this.review.toJSON(),
-                    recruit : this.recruit.toJSON()
+                    recruit : this.recruit.toJSON(),
+                    interviewers : InterviewersCollection.toJSON()
                 }
             }));
         },

@@ -6,7 +6,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -38,7 +37,7 @@ public class ChatController {
 	public Object getMessages(@PathVariable String topic, @PathVariable String user, @RequestParam int messageIndex) {
 		ChatParticipant participant = getChatParticipant(topic, user);
 		List<String> empty = Collections.emptyList();
-		DeferredResult<List<String>> deferredResult = new DeferredResult<List<String>>(empty);
+		DeferredResult<List<String>> deferredResult = new DeferredResult<List<String>>(60000L, empty);
 		List<String> messages = participant.getMessages(deferredResult, messageIndex);
 		return messages.isEmpty() ? deferredResult : messages;
 	}
