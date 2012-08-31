@@ -5,10 +5,12 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
 
+@Ignore
 public class SecurityControllerIntegrationTest extends AbstractControllerIntegrationTest {
 
 	@Test

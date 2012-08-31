@@ -269,6 +269,19 @@
             <version>2.4.3</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.0.0.RC1</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.0.0</version>
+            <type>jar</type>
+            <scope>compile</scope>
+        </dependency>
+
         <!-- BEANS VALIDATION WITH ANNOTATIONS -->
         <dependency>
             <groupId>javax.validation</groupId>
@@ -313,6 +326,14 @@
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-xc</artifactId>
             <version>${jackson.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- LINKED-IN CLEO SUPPORT -->
+        <dependency>
+            <groupId>com.sna-projects.cleo</groupId>
+            <artifactId>cleo</artifactId>
+            <version>1.2.3</version>
             <scope>compile</scope>
         </dependency>
 

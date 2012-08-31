@@ -30,16 +30,6 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     </bean>
     <bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"/>
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"></bean>
-    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-        <property name="alwaysUseFullPath" value="true" />
-        <property name="interceptors">
-            <list>
-                <bean class="com.annconia.api.interceptor.RequestContextInterceptor" />
-                <bean class="com.annconia.api.interceptor.SessionContextInterceptor" />
-                <bean class="com.annconia.api.interceptor.ApiInterceptor" />
-            </list>
-        </property>
-    </bean>
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
         <property name="asyncRequestTimeout" value="30000" />
         <property name="messageConverters">

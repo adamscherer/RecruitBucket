@@ -1,11 +1,11 @@
 package com.roundarch.entity;
 
-
 public class Hometown {
 
 	private String id;
 	private String city;
 	private String state;
+	private int zip;
 	private int pop;
 
 	private double[] loc;
@@ -32,6 +32,14 @@ public class Hometown {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public int getZip() {
+		return zip;
+	}
+
+	public void setZip(int zip) {
+		this.zip = zip;
 	}
 
 	public int getPop() {
