@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindException;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.context.request.async.StaleAsyncWebRequestException;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,9 +29,9 @@ public class ApiExceptionCatcher implements HandlerExceptionResolver {
 	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
 		logger.error("API exception", ex);
 
-		if (ex instanceof StaleAsyncWebRequestException) {
-			return null;
-		}
+		//if (ex instanceof StaleAsyncWebRequestException) {
+		//	return null;
+		//}
 
 		ModelAndView mv = new ModelAndView();
 

@@ -1,12 +1,10 @@
 package com.annconia.api.interceptor;
 
-public class RateLimitException extends RuntimeException {
+import com.annconia.api.ApiException;
+
+public class RateLimitException extends ApiException {
 
 	private static final long serialVersionUID = 1L;
-
-	public RateLimitException() {
-		super();
-	}
 
 	public RateLimitException(String msg) {
 		super(msg);
